@@ -1,6 +1,8 @@
 
 import Link from "next/link"
 import Category from "../components/Category"
+import { useContext } from "react"
+
 
 async function getCategories() {
     const res = await fetch(`https://fakestoreapi.com/products/categories`)
@@ -12,10 +14,11 @@ async function getProducts() {
     return res.json()
 }
 
+
 export default async function Page() {
     const categories = await getCategories()
     const products = await getProducts()
-
+    // const context = useContext(UserContext.browsedHistory)
     return (
         <>
             <div className="flex gap-3 flex-wrap">

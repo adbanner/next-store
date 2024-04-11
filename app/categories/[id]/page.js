@@ -13,9 +13,9 @@ export default async function Category({ params }) {
             <div className="flex gap-3 flex-wrap p-3">
                 {
                     products ?
-                        products.map(card =>
-                            <Link href={`/product/${card.id}`}>
-                                <ProductCard className="card" key={card.id} card={card}></ProductCard>
+                        products.map(product =>
+                            <Link href={`/product/${product.id}`} key={product.id}>
+                                <ProductCard className="card"  product={product}></ProductCard>
                             </Link>
                         )
                         :

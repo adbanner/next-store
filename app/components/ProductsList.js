@@ -1,5 +1,6 @@
-
+import Link from "next/link"
 import ProductCard from "./ProductCard"
+
 
 async function getProducts() {
     const res = await fetch('https://fakestoreapi.com/products?limit=20')
@@ -13,8 +14,8 @@ export default async function ProductsList() {
         <div className="flex gap-3 flex-wrap p-3">
             {
                 products?
-                products.map(card =>
-                    <ProductCard className="card" key={card.id} card={card}></ProductCard>
+                products.map(product =>
+                    <Link key={product.id} href={`/product/${product.id}`}><ProductCard className="card" key={product.id} product={product}></ProductCard></Link>
                 )
                 :
                 <div>No products</div>
