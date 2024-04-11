@@ -13,7 +13,7 @@ const AddToBasket = (props) => {
     },[])
   return (
     <>
-      <Button onClick={()=>dispatch(addToCart(props.productId))} variant="warning" >Add to Basket</Button> 
+      <Button onClick={()=>dispatch(addToCart(props.product))} variant="warning" >Add to Basket</Button> 
     </>
   )
 };

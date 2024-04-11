@@ -6,10 +6,16 @@ import Counter from "../../components/Counter"
 
 import { GoLocation } from "react-icons/go";
 import { GoShare } from "react-icons/go";
+import { GoOrganization } from "react-icons/go";
+import { GoReport } from "react-icons/go";
 
 import { Button, Badge } from "react-bootstrap";
 import banner_650x45 from "../../assets/images/banner/banner_650x45.jpg"
 import AddToBasket from "../../components/buttons/AddToBasket"
+
+import Banner_250x250 from "@/app/components/banners/Banner_250x250"
+import Sponsored from "@/app/components/Sponsored"
+
 
 
 async function getProducts(productId) {
@@ -28,7 +34,6 @@ export default async function Category({ params }) {
                     <div className="flex justify-center">
                         <img src={banner_650x45.src} width="650" height="45"></img>
                     </div>
-
                 </div>
 
                 <div className="wrapper">
@@ -37,7 +42,7 @@ export default async function Category({ params }) {
                     <div className="product-page-main">
                         {/* Product Image  */}
                         <div className="product-img flex">
-                            <div className="product-gallery">
+                            <div className="product-gallery flex flex-col gap-2">
                                 <img src={product.image} />
                                 <span className="align-center text-sm">Roll over image to zoom</span>
                                 <div className="product-img-tmb flex gap-2 justify-between">
@@ -61,12 +66,12 @@ export default async function Category({ params }) {
                             <p>{product.description}</p>
                             <p className="text-sm">{product.title}</p>
                             <p className="text-sm link">Visit the {productSeller} Store</p>
-                            <ProductRating></ProductRating>
+                            <ProductRating />
 
                             <Badge bg="danger" className="limited-deal">Limited time deal</Badge>
                             <div className="horizontal-line"></div>
                             <p className='card-price'><sup></sup>£{product.price}</p>
-                            <div className="text-sm">
+                            <div className="text-sm grid gap-1">
                                 <p className="text-base font-bold">About this item</p>
                                 <ul className="grid gap-1">
                                     <li>{product.description}</li>
@@ -76,9 +81,23 @@ export default async function Category({ params }) {
                                     <li>{product.description}</li>
 
                                 </ul>
+                            </div>
+                            <div className="horizontal-line"></div>
+                            <div className="text-sm grid gap-1">
+                                <p className="text-base font-bold">Additional details</p>
+                                <div className="flex gap-2 items-center">
+                                    <GoOrganization size="40" />
+                                    <div>
+                                        <div>Small Business</div>
+                                        <span>This product is from a small and medium business brand based in the U.K. Support small. <a>Learn more</a></span>
+                                    </div>
+                                </div>
 
                             </div>
-
+                            <div></div>
+                            <Link href="/">
+                                <div className="text-sm flex gap-2 ff-clr-primary-1"><GoReport size="24" /> <span >Report an issue with this product</span></div>
+                            </Link>
                         </div>
 
                         {/* Panel Right*/}
@@ -103,10 +122,10 @@ export default async function Category({ params }) {
                                 <div className="grid gap-2 point">
 
                                     {/* Counter */}
-                                   
+
                                     <Counter></Counter>
 
-                                    <AddToBasket productId={product.id}></AddToBasket>
+                                    <AddToBasket product={product}></AddToBasket>
                                     {/* <Button  variant="warning" className="cart-btn">Add to Basket</Button> */}
                                     <Button variant="warning" className="buy-now-btn">Buy now</Button>
                                 </div>
@@ -129,6 +148,9 @@ export default async function Category({ params }) {
                                     </div>
                                 </div>
                             </div>
+                            <br />
+                            <Banner_250x250></Banner_250x250>
+                            <Sponsored></Sponsored>
                         </div>
                     </div>
 

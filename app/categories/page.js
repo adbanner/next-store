@@ -21,17 +21,19 @@ export default async function Page() {
     // const context = useContext(UserContext.browsedHistory)
     return (
         <>
-            <div className="flex gap-3 flex-wrap">
-                {
-                    categories && products ?
-                        categories.map(category => {
-                            for (let i in products) {
-                                if (products[i].category == category) return <Link href={`/categories/${category}`}><Category key={products[i].name} image={products[i].image} title={category} ></Category></Link>
-                            }
-                        })
-                        :
-                        <div>No categories</div>
-                }
+            <div className="categories-list wrapper-container">
+                <div className="wrapper flex gap-3 flex-wrap border justify-center">
+                    {
+                        categories && products ?
+                            categories.map(category => {
+                                for (let i in products) {
+                                    if (products[i].category == category) return <Link href={`/categories/${category}`}><Category key={products[i].name} image={products[i].image} title={category} ></Category></Link>
+                                }
+                            })
+                            :
+                            <div>No categories</div>
+                    }
+                </div>
             </div>
         </>
     )

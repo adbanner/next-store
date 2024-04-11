@@ -7,15 +7,6 @@ import fetchData from "../fetchFunctions/fetchData"
 
 
 
-// import {useDispatch, useSelector} from "react-redux"
-
-
-// const userDispather = useDispatch()
-// const viewedProducts = useSelector(state => state.viewedProducts)
-
-// console.log(viewedProducts)
-
-
 const SubMenu = () => {
 
   const pathname = usePathname();

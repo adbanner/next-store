@@ -48,7 +48,7 @@ const Header = () => {
                                 <p className="text-xs m-0">Returns</p>
                                 <p className="text-xs m-0 font-bold">& Orders</p>
                             </div>
-                            <Button variant="outline-light" className="cart-btn">Basket <Badge bg="dark">{cartList.length}</Badge></Button>
+                            <Link href="/cart"><Button variant="outline-light" className="cart-btn">Basket <Badge bg="dark">{cartList.length}</Badge></Button></Link>
                         </div>
                     </div>
                 </div>

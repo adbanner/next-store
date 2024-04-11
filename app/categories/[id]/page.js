@@ -10,17 +10,19 @@ export default async function Category({ params }) {
     const products = await getProducts(params.id)
     return (
         <>
-            <div className="flex gap-3 flex-wrap p-3">
-                {
-                    products ?
-                        products.map(product =>
-                            <Link href={`/product/${product.id}`} key={product.id}>
-                                <ProductCard className="card"  product={product}></ProductCard>
-                            </Link>
-                        )
-                        :
-                        <div>No products</div>
-                }
+            <div className="categories-list wrapper-container">
+                <div className="wrapper flex gap-3 flex-wrap p-3 justify-center">
+                    {
+                        products ?
+                            products.map(product =>
+                                <Link href={`/product/${product.id}`} key={product.id}>
+                                    <ProductCard className="card" product={product}></ProductCard>
+                                </Link>
+                            )
+                            :
+                            <div>No products</div>
+                    }
+                </div>
             </div>
         </>
 
