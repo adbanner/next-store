@@ -3,6 +3,7 @@ import { _useAppDispatch } from "@/lib/hooks";
 
 const CartPageItemMenu = (props) => {
     const dispatch = _useAppDispatch()
+   
     return (
         <>
             <div className="cart-page-item-menu  flex gap-2 items-center">
@@ -12,13 +13,13 @@ const CartPageItemMenu = (props) => {
                     <option>3</option>
                 </select>
                 <span style={{ fontSize: "10px", opacity: "0.5" }}>|</span>
-                <button className="a-clr-main" onClick={()=> dispatch(removeFromCart(props.item.id))}>Delete</button>
+                <button className="a-clr-main a-hover-underline" onClick={()=> dispatch(removeFromCart(props.item.id))}>Delete</button>
                 <span style={{ fontSize: "10px", opacity: "0.5" }}>|</span>
-                <span className="a-clr-main">Save for later</span>
+                <span className="a-clr-main a-hover-underline">Save for later</span>
                 <span style={{ fontSize: "10px", opacity: "0.5" }}>|</span>
-                <span className="a-clr-main">See more like this</span>
+                <span className="a-clr-main a-hover-underline">See more like this</span>
                 <span style={{ fontSize: "10px", opacity: "0.5" }}>|</span>
-                <span className="a-clr-main">Share</span>
+                <span className="a-clr-main a-hover-underline">Share</span>
             </div>
         </>
     )

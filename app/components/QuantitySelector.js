@@ -3,12 +3,12 @@
 import Dropdown from 'react-bootstrap/Dropdown';
 import { Button } from "react-bootstrap";
 
-const Counter = () => {
-    const count = 10
+const QuantitySelector = (props) => {
+    const quantity = props.quantity || 5
     return (
         <>
-            <div className="flex" style={{ width: "100%" }}>
-                <select id="value" style={{ width: "100%" }}>
+            <div  className="quantity-selector flex" style={{ width: "100%" }}>
+                <select id="quantitySelector" style={{ width: "100%" }}>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -19,5 +19,4 @@ const Counter = () => {
     )
 };
 
-export default Counter
-
+export default QuantitySelector

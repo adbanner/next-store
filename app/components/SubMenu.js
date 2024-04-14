@@ -23,7 +23,7 @@ const SubMenu = () => {
           {data ?
             data.map(menu =>
               <Link key={menu} href={`/categories/${menu}`}>
-                <button className="sub-menu-btn">{menu}</button>
+                <button className="sub-menu-btn"><span>{menu}</span></button>
               </Link>
             )
             :

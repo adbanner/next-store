@@ -2,11 +2,11 @@
 import Link from "next/link"
 import { usePathname } from 'next/navigation';
 import { GoColumns } from "react-icons/go";
-import Banner_MainMenu from "../assets/images/banner/Banner_MainMenu_400x39.png"
-import Image from 'next/image'
 
 import { useQuery } from '@tanstack/react-query'
 import fetchData from "../fetchFunctions/fetchData"
+import Banner_MainMenu from "@/app/components/banners/Banner_MainMenu"
+
 
 const MainMenu = () => {
   const categories = ["Gift Ideas", "Buy Again"]
@@ -19,7 +19,7 @@ const MainMenu = () => {
     <>
       <div className="main-menu">
         <div className="items">
-          <Link href="/categories"><button className="menu-btn">  <GoColumns /> All</button></Link>
+          <Link href="/categories"><button className="menu-btn font-bold">  <GoColumns /> All</button></Link>
           {categories ?
             categories.map(menu =>
               // <Link key={menu} href={`/categories/${menu}`}>
@@ -36,8 +36,8 @@ const MainMenu = () => {
             <button className="menu-btn"><span>Your Store</span></button>
           </Link>
         </div>
-        <Image className="Banner_MainMenu" src={Banner_MainMenu.src} width="400" height="39"/>
-      </div>
+          <Banner_MainMenu/>
+         </div>
     </>
   )
 };

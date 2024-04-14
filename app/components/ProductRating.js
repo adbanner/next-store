@@ -7,7 +7,7 @@ const ProductRating = (props) => {
     <>
       <div className='card-rating'>
          {props.rating ? showRating(props.rating.rate): showRating(3)}
-        <span className="card-rating-number link">&nbsp;&nbsp;  {props.rating? props.rating.count: "100"}</span>
+        <span className="card-rating-number link text-xs">&nbsp;  {props.rating? props.rating.count: "100"}</span>
       </div>
     </>
   )

@@ -8,19 +8,22 @@ async function getProducts() {
 }
 
 export default async function ProductsList() {
-    const products = await getProducts()
+    let products = await getProducts()
+    products.map(item => item.rnd = Math.random() * 1)
+    products =  products.sort((a, b) => a.rnd - b.rnd)
+    
     return (
-        <> 
-        <div className="flex gap-3 flex-wrap p-3">
-            {
-                products?
-                products.map(product =>
-                    <Link key={product.id} href={`/product/${product.id}`}><ProductCard className="card" key={product.id} product={product}></ProductCard></Link>
-                )
-                :
-                <div>No products</div>
-            }
-        </div>
+        <>
+            <div className="flex gap-3 flex-wrap p-3">
+                {
+                    products ?
+                        products.map(product =>
+                            <Link key={product.id} href={`/product/${product.id}`}><ProductCard className="card" key={product.id} product={product}></ProductCard></Link>
+                        )
+                        :
+                        <div>No products</div>
+                }
+            </div>
         </>
 
     )

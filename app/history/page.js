@@ -14,7 +14,7 @@ export default function Page() {
             <div className="wrapper-container | flex flex-col gap-2 pb-6">
                 <div className="flex justify-center flex-col ">
                     <div className="flex justify-center">
-                        <Image src={banner_650x45.src} width="650" height="45"/>
+                        <img src={banner_650x45.src} width="650" height="45"/>
                     </div>
                 </div>
 

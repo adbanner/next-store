@@ -14,8 +14,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 
 export const metadata: Metadata = {
-  title: "Fake Store",
-  description: "Fake store products ",
+  title: "Next Store",
+  description: "Next store products ",
 };
 
 export default function RootLayout({

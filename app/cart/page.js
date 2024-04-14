@@ -5,6 +5,7 @@ import totalPrice from "../helpers/totalPrice"
 import Banner_Fullx45 from "../components/banners/Banner_Fullx45"
 import Banner_Fullx250 from "../components/banners/Banner_Fullx250"
 import Sponsored from "../components/Sponsored"
+import Banner_BasketRelated from "@/app/components/banners/Banner_BasketRelated"
 
 import { _useAppSelector } from "@/lib/hooks";
 
@@ -37,8 +38,9 @@ const page = () => {
                     <div className="right-panel">
                         <CartBuyBox total={total} subtotal={cartList.length} />
                         <div>
-                            <Banner_Fullx250></Banner_Fullx250>
-                            <Sponsored></Sponsored>
+                            {/* <Banner_Fullx250></Banner_Fullx250> */}
+                            <Banner_BasketRelated></Banner_BasketRelated>
+                            {/* <Sponsored></Sponsored> */}
                         </div>
                     </div>
                 </div>

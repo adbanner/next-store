@@ -1,6 +1,5 @@
 import Link from "next/link"
 import ProductRating from "../ProductRating"
-import Image from 'next/image'
 
 async function getProducts(productId) {
     const res = await fetch(`https://fakestoreapi.com/products/${productId}`)
@@ -17,10 +16,10 @@ const Banner_Fullx250 = async () => {
     return (
         <>
             <Link href={`/product/${productId}`}>
-                <div className="banner cursor-pointer" width="100%" height="250" style={{ padding: "0.5rem", border: "1px solid var(--clr-neutral-3)", color: "#333", background:"white" }}>
+                <div className="banner cursor-pointer" width="100%" height="250" style={{ padding: "1rem", border: "1px solid var(--clr-neutral-3)", color: "#333", background:"white" }}>
                     <div className="" style={{}}></div>
                     <div style={{ height: "130px" }}>
-                        <Image src={product.image} className="img" width={100} height={100}/>
+                        <img src={product.image} className="img" alt=""/>
                     </div>
                     <div className="py-1"></div>
                     <span className="text-sm font-bold">

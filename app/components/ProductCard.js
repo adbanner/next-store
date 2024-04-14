@@ -17,7 +17,7 @@ const ProductCard = ({ product }) => {
                         {product.description}
                     </Card.Text>
                     <ProductRating rating={product.rating}></ProductRating>
-                    <p className='card-price'><sup></sup>£{product.price}</p>
+                    <p className='card-price text-base a-clr-price'><sup></sup>£{product.price}</p>
                     {/* <Button variant="warning">Add to Cart</Button> */}
                 </Card.Body>
             </Card>
