@@ -21,8 +21,8 @@ export default async function Page() {
     // const context = useContext(UserContext.browsedHistory)
     return (
         <>
-            <div className="categories-list wrapper-container">
-                <div className="wrapper flex gap-3 flex-wrap border justify-center">
+            <div className="categories-list wrapper-container px-main">
+                <div className="wrapper flex gap-3 flex-wrap justify-center">
                     {
                         categories && products ?
                             categories.map(category => {

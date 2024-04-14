@@ -4,6 +4,7 @@ import { GoLocation } from "react-icons/go";
 import { GoChevronDown } from "react-icons/go";
 import GB from "../assets/images/flags/GB.svg"
 import Link from "next/link"
+import { usePathname } from "next/navigation";
 
 import { Button, Badge } from "react-bootstrap";
 import MainMenu from "./MainMenu"
@@ -12,26 +13,30 @@ import SubMenu from "./SubMenu"
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 
 const Header = () => {
-    const cartList = useAppSelector((state) => state.cart.cartList);    
+
+    const cartList = useAppSelector((state) => state.cart.cartList); 
+    //const searchCategory = useAppSelector((state) => state.cart.searchCategory);  
+    const searchCategory = useAppSelector((state) => state.searchStore.searchCategory);   
+    const pathname = usePathname()
     return (
         <>
             <header>
-                <div className="header-top | flex gap-1">
+                <div className="header-top | px-main flex gap-1">
 
-                    <Link href="/"><div className="logo">Fake Store </div></Link>
+                    <Link href="/"><div className="logo">Next Store </div></Link>
 
                     <div className="flex justify-between gap-3 items-center" style={{ width: "100%", height: "40px" }}>
 
                         <div className="delivery-info | flex items-center gap-1 cursor-pointer" style={{}}>
                             <GoLocation size="18px" style={{ minWidth: "18px" }} />
                             <div style={{ whiteSpace: "nowrap" }}>
-                                <p className="text-xs m-0" style={{ color: "rgba(255,255,255,0.8)" }}>Deliver to User</p>
+                                <p className="text-xs m-0" style={{ color: "rgba(255,255,255,0.8)" }}>Deliver to</p>
                                 <p className="text-xs m-0 font-bold">Worldwide IP18 6</p>
                             </div>
                         </div>
 
                         <div className="search-bar | flex gap-0">
-                            <Button variant="warning" className="search-category-btn">Electronics</Button>
+                            <Button variant="warning" className="search-category-btn">{searchCategory}<GoChevronDown size="12px"/></Button>
                             <input placeholder="Search item"></input>
                             <Button variant="warning" className="search-btn"><GoSearch className="go-search" size='1.4rem' /></Button>
                         </div>

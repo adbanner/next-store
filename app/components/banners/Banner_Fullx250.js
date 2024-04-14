@@ -7,7 +7,7 @@ async function getProducts(productId) {
     return res.json()
 }
 
-const Banner_250x250 = async () => {
+const Banner_Fullx250 = async () => {
     const productId = Math.round(Math.random() * 20)
     const discount = 5 + Math.round(Math.random() * 50)
     const product = await getProducts(productId)
@@ -17,7 +17,7 @@ const Banner_250x250 = async () => {
     return (
         <>
             <Link href={`/product/${productId}`}>
-                <div className="banner cursor-pointer" style={{ width: "250px", height: "250px", padding: "0.5rem", border: "1px solid var(--clr-neutral-3)", color: "#333" }}>
+                <div className="banner cursor-pointer" width="100%" height="250" style={{ padding: "0.5rem", border: "1px solid var(--clr-neutral-3)", color: "#333", background:"white" }}>
                     <div className="" style={{}}></div>
                     <div style={{ height: "130px" }}>
                         <img src={product.image} className="img" />
@@ -26,7 +26,7 @@ const Banner_250x250 = async () => {
                     <span className="text-sm font-bold">
                         {`${product.title.substring(0, 25)}...`}
                     </span>
-                    <ProductRating></ProductRating>
+                    <ProductRating rating={product.rating}></ProductRating>
                     <div className="flex gap-2 items-center">
                         <div className="bg-red-700 text-xs font-semibold" style={{ width: "max-content", color: "white", padding: "0.1rem 0.5rem" }}><span>{discount}% off</span></div>
                         <span className="decoration-red-700 text-xs font-semibold">Limited time deal</span>
@@ -40,4 +40,4 @@ const Banner_250x250 = async () => {
     )
 };
 
-export default Banner_250x250
+export default Banner_Fullx250

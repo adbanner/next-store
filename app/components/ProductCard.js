@@ -18,7 +18,7 @@ const ProductCard = ({ product }) => {
                     <Card.Text style={{ lineHeight: "1.3", color: "#007185", maxHeight: "105px", overflow: "hidden" }}>
                         {product.description}
                     </Card.Text>
-                    <ProductRating></ProductRating>
+                    <ProductRating rating={product.rating}></ProductRating>
                     <p className='card-price'><sup></sup>£{product.price}</p>
                     {/* <Button variant="warning">Add to Cart</Button> */}
                 </Card.Body>

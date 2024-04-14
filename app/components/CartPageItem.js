@@ -1,12 +1,9 @@
 
 import Link from "next/link"
-import { useEffect } from "react";
 import CartPageItemMenu from "./CartPageItemMenu"
 
 const CartPageItem = (props) => {
-    useEffect(()=>{
-        console.log(props.item.id)
-    },[])
+    
     return (
         <>
             <div className="cart-page-item flex">

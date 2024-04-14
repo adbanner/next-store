@@ -13,8 +13,9 @@ import { Button, Badge } from "react-bootstrap";
 import banner_650x45 from "../../assets/images/banner/banner_650x45.jpg"
 import AddToBasket from "../../components/buttons/AddToBasket"
 
-import Banner_250x250 from "@/app/components/banners/Banner_250x250"
+import Banner_Fullx250 from "@/app/components/banners/Banner_Fullx250"
 import Sponsored from "@/app/components/Sponsored"
+import HistoryDispatcher from "../../components/HistoryDispatcher";
 
 
 
@@ -29,7 +30,7 @@ export default async function Category({ params }) {
 
     return (
         <>
-            <div className="product-page flex flex-col gap-0 ">
+            <div className="product-page flex flex-col gap-0 px-main">
                 <div className="flex justify-center flex-col ">
                     <div className="flex justify-center">
                         <img src={banner_650x45.src} width="650" height="45"></img>
@@ -37,15 +38,22 @@ export default async function Category({ params }) {
                 </div>
 
                 <div className="wrapper">
-                    <span className="text-xs" style={{ width: "100%", color: "#565959 !important", textTransform: "capitalize" }}>{`${product.category} > ${productSeller}`}</span>
+                    <br></br>
+                    {/* <span className="text-xs" style={{ width: "100%", color: "#565959 !important", textTransform: "capitalize" }}>{`${product.category} > ${productSeller}`}</span> */}
 
                     <div className="product-page-main">
                         {/* Product Image  */}
-                        <div className="product-img flex">
-                            <div className="product-gallery flex flex-col gap-2">
-                                <img src={product.image} />
+                        <div className="product-img">
+                            <div className="product-gallery">
+                                <div className="flex">
+                                    <img src={product.image} />
+                                    <div className="product-img-share">
+                                        <GoShare size="24px" />
+                                    </div>
+                                </div>
+
                                 <span className="align-center text-sm">Roll over image to zoom</span>
-                                <div className="product-img-tmb flex gap-2 justify-between">
+                                <div className="product-img-tmb flex gap-2 justify-center">
                                     <img src={product.image}></img>
                                     <img src={product.image}></img>
                                     <img src={product.image}></img>
@@ -56,9 +64,7 @@ export default async function Category({ params }) {
                                 </div>
                             </div>
 
-                            <div className="product-img-share">
-                                <GoShare size="24px" />
-                            </div>
+
                         </div>
 
                         {/* Product Info */}
@@ -66,7 +72,7 @@ export default async function Category({ params }) {
                             <p>{product.description}</p>
                             <p className="text-sm">{product.title}</p>
                             <p className="text-sm link">Visit the {productSeller} Store</p>
-                            <ProductRating />
+                            <ProductRating rating={product.rating} />
 
                             <Badge bg="danger" className="limited-deal">Limited time deal</Badge>
                             <div className="horizontal-line"></div>
@@ -100,8 +106,8 @@ export default async function Category({ params }) {
                             </Link>
                         </div>
 
-                        {/* Panel Right*/}
-                        <div className="panel-right">
+                        {/* Right Panel */}
+                        <div className="right-panel">
                             <div className="grid grid-cols-2 text-xs font-semibold">
                                 <button className="delivery-option py-3 active">Delivery</button>
                                 <button className="delivery-option py-3">Pickup</button>
@@ -148,9 +154,10 @@ export default async function Category({ params }) {
                                     </div>
                                 </div>
                             </div>
-                            <br />
-                            <Banner_250x250></Banner_250x250>
-                            <Sponsored></Sponsored>
+                            <div>
+                                <Banner_Fullx250></Banner_Fullx250>
+                                <Sponsored></Sponsored>
+                            </div>
                         </div>
                     </div>
 
@@ -159,6 +166,8 @@ export default async function Category({ params }) {
                 </div>
 
             </div>
+
+            <HistoryDispatcher product={product}></HistoryDispatcher>
 
         </>
 
