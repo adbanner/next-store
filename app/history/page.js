@@ -2,18 +2,19 @@
 import Link from "next/link"
 import ProductCard from "../components/BrowsedHistory/ProductCard"
 import banner_650x45 from "@/app/assets/images/banner/banner_650x45.jpg"
-import { useAppSelector } from "@/lib/hooks"
+import { _useAppSelector } from "@/lib/hooks"
+import Image from 'next/image'
 
 
 export default function Page() {
-    const products = useAppSelector(state => state.historyStore.browsedProducts)
+    const products = _useAppSelector(state => state.historyStore.browsedProducts)
 
     return (
         <>
             <div className="wrapper-container | flex flex-col gap-2 pb-6">
                 <div className="flex justify-center flex-col ">
                     <div className="flex justify-center">
-                        <img src={banner_650x45.src} width="650" height="45"></img>
+                        <Image src={banner_650x45.src} width="650" height="45"/>
                     </div>
                 </div>
 

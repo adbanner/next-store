@@ -1,8 +1,8 @@
 import { removeFromCart } from "@/lib/features/cartSlice";
-import { useAppDispatch } from "@/lib/hooks";
+import { _useAppDispatch } from "@/lib/hooks";
 
 const CartPageItemMenu = (props) => {
-    const dispatch = useAppDispatch()
+    const dispatch = _useAppDispatch()
     return (
         <>
             <div className="cart-page-item-menu  flex gap-2 items-center">

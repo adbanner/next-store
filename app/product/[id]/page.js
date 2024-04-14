@@ -10,12 +10,15 @@ import { GoOrganization } from "react-icons/go";
 import { GoReport } from "react-icons/go";
 
 import { Button, Badge } from "react-bootstrap";
-import banner_650x45 from "../../assets/images/banner/banner_650x45.jpg"
 import AddToBasket from "../../components/buttons/AddToBasket"
 
+import Banner_Fullx45 from "@/app/components/banners/Banner_Fullx45"
 import Banner_Fullx250 from "@/app/components/banners/Banner_Fullx250"
+
 import Sponsored from "@/app/components/Sponsored"
 import HistoryDispatcher from "../../components/HistoryDispatcher";
+
+import Image from 'next/image'
 
 
 
@@ -31,11 +34,8 @@ export default async function Category({ params }) {
     return (
         <>
             <div className="product-page flex flex-col gap-0 px-main">
-                <div className="flex justify-center flex-col ">
-                    <div className="flex justify-center">
-                        <img src={banner_650x45.src} width="650" height="45"></img>
-                    </div>
-                </div>
+
+                <Banner_Fullx45 />
 
                 <div className="wrapper">
                     <br></br>
@@ -46,7 +46,7 @@ export default async function Category({ params }) {
                         <div className="product-img">
                             <div className="product-gallery">
                                 <div className="flex">
-                                    <img src={product.image} />
+                                    <img src={product.image}/>
                                     <div className="product-img-share">
                                         <GoShare size="24px" />
                                     </div>
@@ -54,13 +54,13 @@ export default async function Category({ params }) {
 
                                 <span className="align-center text-sm">Roll over image to zoom</span>
                                 <div className="product-img-tmb flex gap-2 justify-center">
-                                    <img src={product.image}></img>
-                                    <img src={product.image}></img>
-                                    <img src={product.image}></img>
-                                    <img src={product.image}></img>
-                                    <img src={product.image}></img>
-                                    <img src={product.image}></img>
-                                    <img src={product.image}></img>
+                                    <img src={product.image}alt="" />
+                                    <img src={product.image}alt="" />
+                                    <img src={product.image}alt="" />
+                                    <img src={product.image}alt="" />
+                                    <img src={product.image}alt="" />
+                                    <img src={product.image}alt="" />
+                                    <img src={product.image}alt="" />
                                 </div>
                             </div>
 

@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from 'next/image'
 
 import ProductRating from "../ProductRating"
 import RemoveFromViewBtn from "../../components/buttons/RemoveFromViewBtn"

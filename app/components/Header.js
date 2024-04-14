@@ -9,14 +9,15 @@ import { usePathname } from "next/navigation";
 import { Button, Badge } from "react-bootstrap";
 import MainMenu from "./MainMenu"
 import SubMenu from "./SubMenu"
+import Image from 'next/image'
 
-import { useAppDispatch, useAppSelector } from "@/lib/hooks";
+import { _useAppSelector } from "@/lib/hooks";
 
 const Header = () => {
 
-    const cartList = useAppSelector((state) => state.cart.cartList); 
+    const cartList = _useAppSelector((state) => state.cart.cartList); 
     //const searchCategory = useAppSelector((state) => state.cart.searchCategory);  
-    const searchCategory = useAppSelector((state) => state.searchStore.searchCategory);   
+    const searchCategory = _useAppSelector((state) => state.searchStore.searchCategory);   
     const pathname = usePathname()
     return (
         <>

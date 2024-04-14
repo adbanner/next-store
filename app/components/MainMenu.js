@@ -1,9 +1,9 @@
 "use client"
-import { useEffect, useState } from "react";
 import Link from "next/link"
 import { usePathname } from 'next/navigation';
 import { GoColumns } from "react-icons/go";
 import Banner_MainMenu from "../assets/images/banner/Banner_MainMenu_400x39.png"
+import Image from 'next/image'
 
 import { useQuery } from '@tanstack/react-query'
 import fetchData from "../fetchFunctions/fetchData"
@@ -36,7 +36,7 @@ const MainMenu = () => {
             <button className="menu-btn"><span>Your Store</span></button>
           </Link>
         </div>
-        <img className="Banner_MainMenu" src={Banner_MainMenu.src} width="400" height="39"></img>
+        <Image className="Banner_MainMenu" src={Banner_MainMenu.src} width="400" height="39"/>
       </div>
     </>
   )

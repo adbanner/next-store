@@ -1,4 +1,5 @@
 
+import Image from 'next/image'
 import Link from "next/link"
 import CartPageItemMenu from "./CartPageItemMenu"
 
@@ -9,7 +10,7 @@ const CartPageItem = (props) => {
             <div className="cart-page-item flex">
                 <div className="cart-page-item-grid justify-center w-full">
                     <input type="checkbox"></input>
-                   <Link href={`/product/${props.item.id}`}> <img className="img" src={props.item.image} style={{ width: "180px", height: "180px" }}></img></Link>
+                   <Link href={`/product/${props.item.id}`}> <Image className="img" src={props.item.image} style={{ width: "180px", height: "180px" }}/></Link>
                     <div className="cart-page-item-info text-xs w-full">
 
                         <div className="flex justify-between ">
