@@ -771,6 +771,7 @@ nav {
 /* smart-wagon */
 .smart-wagon{
   height: 460px;
+  opacity: 1;
 }
 .smart-wagon-grid{
   display: grid;
