@@ -125,7 +125,7 @@ export default async function Category({ params }) {
                                 <span className="font-bold">Only {Math.round(5 + Math.random() * 10)} left in stock.</span>
 
 
-                                <div className="grid gap-2 point">
+                                <div className="grid gap-2 point w-full">
 
                                     {/* Counter */}
 
@@ -133,7 +133,7 @@ export default async function Category({ params }) {
 
                                     <AddToBasket product={product}></AddToBasket>
                                     {/* <Button  variant="warning" className="cart-btn">Add to Basket</Button> */}
-                                    <Button variant="warning" className="buy-now-btn | radius-round | text-sm">Buy now</Button>
+                                    <Link href={"/cart/smart-wagon"} ><Button variant="warning" className="buy-now-btn | radius-round | text-sm w-full">Buy now</Button></Link>
                                 </div>
                                 <div className="grid gap-1 text-xs">
                                     <div className="grid grid-cols-2 gap-1 ">

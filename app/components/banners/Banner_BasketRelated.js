@@ -11,6 +11,8 @@ import fetchData from "../../fetchFunctions/fetchData"
 const Banner_BasketRelated = () => {
     let products
     const {data, isPending, isError, error} = useQuery({queryKey: ['productsList'], queryFn: ()=>fetchData("")})
+    
+    if(isPending) return <div></div>
     if(isError) return <p>Error</p>
     if(data) {
         data.map(item => item.rnd = Math.random() * 1)

@@ -19,7 +19,6 @@ const SubMenu = () => {
     <>
       <div className="sub-menu ">
         <div className="items">
-         
           {data ?
             data.map(menu =>
               <Link key={menu} href={`/categories/${menu}`}>
@@ -29,7 +28,6 @@ const SubMenu = () => {
             :
             <p></p>
           }
-          
           
         </div>
       </div>
