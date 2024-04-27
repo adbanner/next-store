@@ -12,9 +12,19 @@ import SearchBar from "./SearchBar"
 import Image from 'next/image'
 
 import { _useAppSelector } from "@/lib/hooks";
+import { _useAppDispatch } from "@/lib/hooks";
+import { getCartItems } from "@/lib/features/cartSlice";
+
 import { useEffect, useState } from "react";
 
+
 const Header = () => {
+    const dispatch = _useAppDispatch();
+    useEffect(()=>{
+        dispatch(getCartItems([JSON.parse(localStorage.getItem("cartList"))]))
+    }, [])
+    
+   
     const cartList = _useAppSelector((state) => state.cart.cartList);
     const itemsAmount = Object.keys(cartList).reduce((previous, key) => {
         return previous + cartList[key].amount;
