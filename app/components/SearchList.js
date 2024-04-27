@@ -1,18 +1,19 @@
 "use client"
 import Link from "next/link"
-import ProductCard from "./ProductCard"
-import { useSearchParams } from 'next/navigation'
-import fetchData from "@/app/fetchFunctions/fetchData"
-import { useQuery } from "@tanstack/react-query"
-import { Suspense } from 'react'
+//import { useSearchParams } from 'next/navigation'
 
+import { Suspense } from 'react'
+import { useQuery } from "@tanstack/react-query"
+
+import ProductCard from "./ProductCard"
+import fetchData from "@/app/fetchFunctions/fetchData"
 
 export default function ProductsList() {
-    const searchParams = useSearchParams()
+    //const searchParams = useSearchParams()
     let { data, isPending, isError, error } = useQuery({ queryKey: ['searchList'], queryFn: () => fetchData("") })
     if (data) {
-        console.log(searchParams.get("str"))
-        data = data.filter((obj) => Object.values(obj).toString().toLowerCase().includes(searchParams.get("str") || ""))
+        //data = data.filter((obj) => Object.values(obj).toString().toLowerCase().includes(searchParams.get("str") || ""))
+        data = data.filter((obj) => Object.values(obj).toString().toLowerCase().includes("men" || ""))
     }
 
     return (
