@@ -6,7 +6,7 @@ const Footer = () => {
         <div className="footer-div">
             <BackToTop />
             <footer className="footer ">
-                <div className="wrapper flex gap-20">
+                <div className="flex justify-center gap-20">
                     <div>
                         <div className="footer-nav-title">Get to Know Us</div>
                         <div className="footer-nav-col">

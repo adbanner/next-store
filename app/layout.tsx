@@ -14,7 +14,11 @@ const inter = Inter({ subsets: ["latin"] });
 
 
 export const metadata: Metadata = {
-  title: "Next Store",
+  title: {
+    default: "Next Store",
+    template: "Next Store | %s"
+  }
+  ,
   description: "Next store products ",
 };
 

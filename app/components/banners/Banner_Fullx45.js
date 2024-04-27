@@ -7,7 +7,7 @@ const Banner_Fullx45 = () => {
         <>
             <div className="flex justify-center flex-col ">
                 <div className="flex justify-center">
-                <Link href="/categories/electronics"><Image src={banner_650x45.src} width="650" height="45" alt="banner_650x45"/></Link>
+                <Link href="/categories/electronics"><Image src={banner_650x45.src} width="650" height="45" alt="banner_650x45" priority/></Link>
                 </div>
             </div>
         </>

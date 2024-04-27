@@ -11,7 +11,14 @@ const SmartWagon_Main = () => {
     const cartList = _useAppSelector(state => state.cart.cartList)
     const lastItem = cartList[cartList.length-1]
     let total
-    cartList.length ? total = totalPrice(cartList) : total = 0
+    
+    if(cartList.length) {
+        total = totalPrice(cartList)
+    }else{
+        total = 0
+        return <div></div>
+    }  
+
 
 
     return (
@@ -37,7 +44,7 @@ const SmartWagon_Main = () => {
                     <div className="flex flex-col gap-2 px-4 w-full items-center justify-center">
                         <p className="text-base text-left font-medium pb-1">Basket Subtotal: <b>£100</b></p>
                         <Link href={"/cart"} className="w-full"><Button variant="warning" className="w-full text-sm">Proceed to Checkout</Button></Link>
-                        <Link href={"/cart"} className="w-full"><Button variant="warning" className="w-full text-sm">Go to Basket</Button></Link>
+                        <Link href={"/cart"} className="w-full"><Button variant="light" className="w-full text-sm border-1-grey">Go to Basket</Button></Link>
                         <p className="text-xs ">For best experience <span className="a-clr-main">sign in to your account</span></p>
                     </div>
                 </div>

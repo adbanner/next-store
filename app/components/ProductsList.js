@@ -14,7 +14,7 @@ export default async function ProductsList() {
     
     return (
         <>
-            <div className="flex gap-3 flex-wrap p-3">
+            <div className="flex gap-3 flex-wrap p-3 justify-center">
                 {
                     products ?
                         products.map(product =>

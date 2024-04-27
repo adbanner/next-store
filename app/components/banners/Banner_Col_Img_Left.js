@@ -6,7 +6,6 @@ import ProductRating from "../ProductRating"
 const Banner_Col_Img_Left = (props) => {
     return (
         <>
-            <Link href={`/product/${props.product.id}`}>
                 <div className="banner-col_img_left cursor-pointer display flex py-2" width="100%" height="250" style={{ padding: "0 1rem", color: "#333", background: "white" }}>
 
                     <div className="img">
@@ -25,7 +24,6 @@ const Banner_Col_Img_Left = (props) => {
                         <button className="remove-from-view-btn">See all buying options</button>
                     </div>
                 </div>
-            </Link>
         </>
     )
 };

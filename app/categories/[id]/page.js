@@ -1,5 +1,6 @@
 import ProductCard from "../../components/ProductCard"
 import Link from "next/link"
+import SmartWagon_Carousel from "@/app/components/SmartWagon_Carousel"
 
 async function getProducts(categoryId) {
     const res = await fetch(`https://fakestoreapi.com/products/category/${categoryId}`)
@@ -23,7 +24,9 @@ export default async function Category({ params }) {
                             <div>No products</div>
                     }
                 </div>
+                
             </div>
+            <SmartWagon_Carousel title={"Customers also viewed these products"}></SmartWagon_Carousel>
         </>
 
     )

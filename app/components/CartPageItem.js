@@ -22,7 +22,7 @@ const CartPageItem = (props) => {
                                     <li>In stock</li>
                                     <li>Eligible for FREE Shipping</li>
                                     <li className="flex gap-1 items-center"><input type="checkbox" id={`checkbox_gift_${props.item.id}`}/><span>This will be a gift <span className="a-clr-main">Learn more</span></span></li>
-                                    <li><b>Flavour Name:</b> Salted Caramel</li>
+                                    <li><b>Color Name:</b> Vanta black</li>
                                     <li><b>Size Name:</b> 1.8kg Bag</li>
                                 </div>
                             </div>

@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from 'next/image'
-import Banner_MainMenu_400x39 from "@/app/assets/images/banner/Banner_MainMenu_400x39.png"
+import Banner_MainMenu_400x39 from "@/app/assets/images/banner/Banner_MainMenu_400x39_3.jpg"
 
 const Banner_MainMenu = () => {
   return (

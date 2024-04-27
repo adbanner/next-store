@@ -1,7 +1,6 @@
 "use client"
-import { GoSearch } from "react-icons/go";
+
 import { GoLocation } from "react-icons/go";
-import { GoChevronDown } from "react-icons/go";
 import GB from "../assets/images/flags/GB.svg"
 import Link from "next/link"
 import { usePathname } from "next/navigation";
@@ -9,16 +8,17 @@ import { usePathname } from "next/navigation";
 import { Button, Badge } from "react-bootstrap";
 import MainMenu from "./MainMenu"
 import SubMenu from "./SubMenu"
+import SearchBar from "./SearchBar"
 import Image from 'next/image'
 
 import { _useAppSelector } from "@/lib/hooks";
+import { useEffect, useState } from "react";
 
 const Header = () => {
-
-    const cartList = _useAppSelector((state) => state.cart.cartList); 
-    //const searchCategory = useAppSelector((state) => state.cart.searchCategory);  
-    const searchCategory = _useAppSelector((state) => state.searchStore.searchCategory);   
-    const pathname = usePathname()
+    const cartList = _useAppSelector((state) => state.cart.cartList);
+    const itemsAmount = Object.keys(cartList).reduce((previous, key) => {
+        return previous + cartList[key].amount;
+    }, 0) || 0
     return (
         <>
             <header>
@@ -36,11 +36,7 @@ const Header = () => {
                             </div>
                         </div>
 
-                        <div className="search-bar | flex gap-0">
-                            <Button variant="warning" className="search-category-btn">{searchCategory}<GoChevronDown size="12px"/></Button>
-                            <input placeholder="Search item"></input>
-                            <Button variant="warning" className="search-btn"><GoSearch className="go-search" size='1.4rem' /></Button>
-                        </div>
+                        <SearchBar></SearchBar>
                         <div>
                             <img src={GB.src} alt="" width="40px" />
                         </div>
@@ -54,7 +50,7 @@ const Header = () => {
                                 <p className="text-xs m-0">Returns</p>
                                 <p className="text-xs m-0 font-bold">& Orders</p>
                             </div>
-                            <Link href="/cart"><Button variant="outline-light" className="cart-btn">Basket <Badge bg="dark">{cartList.length}</Badge></Button></Link>
+                            <Link href="/cart"><Button variant="outline-light" className="cart-btn">Basket <Badge bg="dark">{itemsAmount}</Badge></Button></Link>
                         </div>
                     </div>
                 </div>

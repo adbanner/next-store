@@ -11,7 +11,7 @@ const CartBuyBox = (props) => {
                 </div>
                 <div className="grid gap-3">
                     <div>
-                        <p className="text-base text-left font-medium pb-1">Subtotal ({props.subtotal} items): <b>£{props.total}</b></p>
+                        <p className="text-base text-left font-medium pb-1">Subtotal ({props.subtotal} {props.subtotal==1 ? "item": "items"}): <b>£{props.total}</b></p>
                         <div className="flex gap-1 items-center text-xs"><input type="checkbox" /><span>This order contains a gift</span></div>
                     </div>
                     <Button variant="warning" className="w-full text-sm">Proceed to Checkout</Button>

@@ -9,7 +9,16 @@ const ProductCard = (props) => {
 
     return (
         <>
-            <div className="cursor-pointer" style={{ width: "210px", height: "390px", padding: "0.5rem", border: "1px solid var(--clr-neutral-3)", color: "#333" }}>
+            <div className="" style={{
+                width: "210px",
+                height: "390px", 
+                padding: "0.5rem", 
+                border: "1px solid var(--clr-neutral-3)", 
+                marginLeft: "-1px", 
+                marginRight: "0", 
+                marginBottom: "-1px", 
+                color: "#333"
+            }}>
                 <Link href={`/product/${props.product.id}`}>
                     <div className="" style={{}}></div>
                     <div style={{ padding: "1rem 1rem 0", height: "180px" }}>

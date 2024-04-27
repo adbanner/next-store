@@ -26,7 +26,7 @@ const Banner_BasketRelated = () => {
         <div className="items">
           {products ?
             products.map(product =>
-              <Link key={product.id} href={`/${product.id}`}>
+              <Link key={product.id} href={`/product/${product.id}`} >
                 <Banner_Col_Img_Left product={product}/>
               </Link>
             )

@@ -1,4 +1,7 @@
 "use client"
+
+import { useRouter } from 'next/navigation';
+
 import { _useAppDispatch } from "@/lib/hooks";
 import { addToCart } from "@/lib/features/cartSlice";
 
@@ -6,12 +9,13 @@ import { Button, Badge } from "react-bootstrap";
 
 
 const AddToBasket = (props) => {
+  const {push} = useRouter()
   const dispatch = _useAppDispatch();
 
   const addToBasketClick = () => {
-    dispatch(addToCart([props.product, 5]))
+    dispatch(addToCart([props.product, 1]))
     const quantitySelector = document.querySelector('#quantitySelector')
-    console.log("quantitySelector", quantitySelector.value)
+    push("/cart/smart-wagon")
   }
 
 
