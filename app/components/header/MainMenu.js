@@ -1,10 +1,9 @@
 "use client"
 import Link from "next/link"
 import { usePathname } from 'next/navigation';
-import { GoColumns } from "react-icons/go";
 
 import { useQuery } from '@tanstack/react-query'
-import fetchData from "../fetchFunctions/fetchData"
+import fetchData from "../../fetchFunctions/fetchData"
 import Banner_MainMenu from "@/app/components/banners/Banner_MainMenu"
 
 
@@ -19,7 +18,7 @@ const MainMenu = () => {
     <>
       <div className="main-menu">
         <div className="items">
-          <Link href="/categories"><button className="menu-btn font-bold">  <GoColumns /> All</button></Link>
+          <Link href="/categories"><button className="menu-btn font-bold flex items-center gap-2">  <p className="rotate-90 font-medium" >|||</p> <span > All</span></button></Link>
           {categories ?
             categories.map(menu =>
               // <Link key={menu} href={`/categories/${menu}`}>

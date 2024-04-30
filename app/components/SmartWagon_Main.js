@@ -8,16 +8,16 @@ import { _useAppSelector } from "@/lib/hooks";
 
 
 const SmartWagon_Main = () => {
-    const cartList = _useAppSelector(state => state.cart.cartList)
-    const lastItem = cartList[cartList.length-1]
+    const cartItems = _useAppSelector(state => state.cart.cartItems)
+    const lastItem = cartItems[cartItems.length - 1]
     let total
-    
-    if(cartList.length) {
-        total = totalPrice(cartList)
-    }else{
+
+    if (cartItems.length) {
+        total = totalPrice(cartItems)
+    } else {
         total = 0
         return <div></div>
-    }  
+    }
 
 
 
@@ -25,9 +25,11 @@ const SmartWagon_Main = () => {
         <>
             <div className="grid gap-3 grid-cols-2 w-full  px-main min-h-min">
                 <div className="flex gap-4 items-center justify-center   bg-white p-6">
-                    <div className="img" style={{ width: "100px", height: "100px" }}>
-                        <img src={lastItem.image} className="img" style={{ width: "100px", height: "100px" }} alt="" />
-                    </div>
+                    <Link href={`/product/${lastItem.id}`}>
+                        <div className="img" style={{ width: "100px", height: "100px" }}>
+                            <img src={lastItem.image} className="img" style={{ width: "100px", height: "100px" }} alt="" />
+                        </div>
+                    </Link>
                     <div>
                         <div className="flex items-center gap-2">
                             <GoCheckCircleFill size="16px" style={{ color: "green" }} />

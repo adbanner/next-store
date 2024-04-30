@@ -1,6 +1,6 @@
 "use client"
 import { useQuery } from '@tanstack/react-query'
-import fetchData from "@/app/fetchFunctions/fetchData"
+import fetchData from "@/app/fetchFunctions/fetchData.ts"
 import Card_Img_Top from "@/app/components/cards/Card_Img_Top"
 import { GoChevronLeft } from "react-icons/go";
 import { useEffect, useState } from 'react';

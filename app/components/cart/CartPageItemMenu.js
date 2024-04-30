@@ -1,9 +1,14 @@
 import { removeFromCart } from "@/lib/features/cartSlice";
+import { addToSaved } from "@/lib/features/cartSlice";
 import { _useAppDispatch } from "@/lib/hooks";
 
 const CartPageItemMenu = (props) => {
     const dispatch = _useAppDispatch()
-   
+
+    const onSaveClick = () => {
+        dispatch(addToSaved([props.item.id]))
+        dispatch(removeFromCart([props.item.id]))
+    }
     return (
         <>
             <div className="cart-page-item-menu  flex gap-2 items-center">
@@ -13,7 +18,7 @@ const CartPageItemMenu = (props) => {
                 <span style={{ fontSize: "10px", opacity: "0.5" }}>|</span>
                 <button className="a-clr-main a-hover-underline" onClick={()=> dispatch(removeFromCart(props.item.id))}>Delete</button>
                 <span style={{ fontSize: "10px", opacity: "0.5" }}>|</span>
-                <span className="a-clr-main a-hover-underline">Save for later</span>
+                <span className="a-clr-main a-hover-underline" onClick={onSaveClick}>Save for later</span>
                 <span style={{ fontSize: "10px", opacity: "0.5" }}>|</span>
                 <span className="a-clr-main a-hover-underline">See more like this</span>
                 <span style={{ fontSize: "10px", opacity: "0.5" }}>|</span>

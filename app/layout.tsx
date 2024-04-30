@@ -4,7 +4,7 @@ import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import ReactClientProvider from "./components/ReactClientProvider";
-import Header from "./components/Header";
+import Header from "./components/header/Header";
 import Footer from "./components/Footer"
 import  PathName  from "./components/PathName";
 

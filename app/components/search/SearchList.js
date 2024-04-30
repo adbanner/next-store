@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Suspense } from 'react'
 import { useQuery } from "@tanstack/react-query"
 
-import ProductCard from "./ProductCard"
+import ProductCard from "../ProductCard"
 import fetchData from "@/app/fetchFunctions/fetchData"
 
 export default function ProductsList() {

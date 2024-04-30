@@ -1,33 +1,34 @@
 "use client"
 
 import { GoLocation } from "react-icons/go";
-import GB from "../assets/images/flags/GB.svg"
+import GB from "@/app/assets/images/flags/GB.svg"
 import Link from "next/link"
-import { usePathname } from "next/navigation";
 
 import { Button, Badge } from "react-bootstrap";
 import MainMenu from "./MainMenu"
 import SubMenu from "./SubMenu"
-import SearchBar from "./SearchBar"
-import Image from 'next/image'
+import SearchBar from "../search/SearchBar"
 
 import { _useAppSelector } from "@/lib/hooks";
 import { _useAppDispatch } from "@/lib/hooks";
-import { getCartItems } from "@/lib/features/cartSlice";
 
-import { useEffect, useState } from "react";
+import { getCartItems, 
+         getSavedItems } from "@/lib/features/cartSlice";
+
+import { useEffect} from "react";
 
 
 const Header = () => {
     const dispatch = _useAppDispatch();
     useEffect(()=>{
-        dispatch(getCartItems([JSON.parse(localStorage.getItem("cartList"))]))
+        dispatch(getCartItems([JSON.parse(localStorage.getItem("cartItems"))]))
+        dispatch(getSavedItems([JSON.parse(localStorage.getItem("savedItems"))]))
     }, [])
     
    
-    const cartList = _useAppSelector((state) => state.cart.cartList);
-    const itemsAmount = Object.keys(cartList).reduce((previous, key) => {
-        return previous + cartList[key].amount;
+    const cartItems = _useAppSelector((state) => state.cart.cartItems);
+    const itemsAmount = Object.keys(cartItems).reduce((previous, key) => {
+        return previous + cartItems[key].amount;
     }, 0) || 0
     return (
         <>
@@ -53,7 +54,7 @@ const Header = () => {
                         <div className="flex gap-4 justify-end items-center" >
                             <div style={{ whiteSpace: "nowrap" }} className="cursor-pointer">
                                 <p className="text-xs m-0">Hello, User</p>
-                                <p className="text-xs m-0 font-bold">Accout & Lists</p>
+                                <p className="text-xs m-0 font-bold">Accout & Itemss</p>
                             </div>
 
                             <div style={{ whiteSpace: "nowrap" }} className=" cursor-pointer">

@@ -233,7 +233,9 @@ ul {
   text-decoration: underline;
 }
 
-
+h1, h2 {
+  padding-bottom: 4px;
+}
 
 p {
   margin: 0 !important;
@@ -273,7 +275,7 @@ a {
 
 
 .wrapper {
-  min-width: 1100px;
+  min-width: 700px;
 }
 
 input {
@@ -305,6 +307,83 @@ input[type=text]:focus {
 
 .border-main {
   border: 1px solid var(--clr-neutral-3);
+}
+
+/* Buttons */
+.mission-category-btn{
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #555;
+  border-radius: 0.5rem;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.btn-outline{
+  width: 100%;
+  background: white;
+  border: 1px solid #cecece;
+  border-radius: 0.5rem;
+  padding: 0.1rem 0.3rem;
+  box-shadow: 0 2px 5px rgba(15,17,17,.15);
+}
+
+.border-b-active{
+  border-bottom: 2px solid orangered;
+}
+
+
+/* Share Box  */
+.share-box{
+  width: 150px;
+  background: white;
+  border: 1px solid #BBBFBF;
+  border-radius: 0.5rem;
+  position: absolute;
+  transform: translate(-162px, 45px);
+  box-shadow: 0 2px 5px rgba(15,17,17,.15);
+}
+
+.share-box .arrow{
+  width: 1.5rem;
+  height: 0.6rem;
+  transform: translate(110px, -10px);
+  overflow: hidden;
+  position: absolute;
+}
+.share-box .arrow .rect{
+  width: 1rem;
+  height: 1rem;
+  background: white;
+  border: 1px solid #BBBFBF;
+  transform: rotate(45deg) translate(5px, 1px);
+}
+
+.share-box ul{
+  all: unset;
+}
+
+
+.share-box li{
+  cursor: pointer;
+  display: flex;
+  gap: 0.5rem;
+  padding: 7px;
+  font-size: 14px;
+  font-weight: 500;
+  border-top: 1px solid #BBBFBF;
+}
+.share-box li:hover{
+  color: orangered;
+}
+
+
+.share-box li:nth-child(1){
+  border-top: none;
+}
+
+.share-box li img{
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 /* Header */
@@ -732,6 +811,7 @@ nav {
 .cart-page-main {
   gap: 1.5rem;
   width: 100%;
+  height: min-content;
   background: white;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
@@ -869,7 +949,7 @@ footer li:hover {
   }
 }
 
-@media (min-width: 1248px) {
+@media (min-width: 1548px) {
 
   .categories-list,
   .product-page,
@@ -883,6 +963,6 @@ footer li:hover {
 
   .wrapper-container .wrapper,
   .product-page .wrapper {
-    width: 1200px;
+    width: 1500px;
   }
 }

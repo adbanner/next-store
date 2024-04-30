@@ -3,7 +3,7 @@ import Link from "next/link"
 import { usePathname } from 'next/navigation';
 
 import { useQuery} from '@tanstack/react-query'
-import fetchData from "../fetchFunctions/fetchData"
+import fetchData from "../../fetchFunctions/fetchData"
 
 
 

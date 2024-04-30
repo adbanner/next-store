@@ -5,7 +5,6 @@ import ProductRating from "../../components/ProductRating"
 import QuantitySelector from "../../components/QuantitySelector"
 
 import { GoLocation } from "react-icons/go";
-import { GoShare } from "react-icons/go";
 import { GoOrganization } from "react-icons/go";
 import { GoReport } from "react-icons/go";
 
@@ -18,7 +17,7 @@ import Banner_Fullx250 from "@/app/components/banners/Banner_Fullx250"
 import Sponsored from "@/app/components/Sponsored"
 import HistoryDispatcher from "../../components/HistoryDispatcher";
 
-import Image from 'next/image'
+import Gallery from "@/app/components/product/Gallery"
 
 
 
@@ -42,30 +41,7 @@ export default async function Category({ params }) {
                     {/* <span className="text-xs" style={{ width: "100%", color: "#565959 !important", textTransform: "capitalize" }}>{`${product.category} > ${productSeller}`}</span> */}
 
                     <div className="product-page-main">
-                        {/* Product Image  */}
-                        <div className="product-img">
-                            <div className="product-gallery">
-                                <div className="flex">
-                                    <img src={product.image}/>
-                                    <div className="product-img-share">
-                                        <GoShare size="24px" />
-                                    </div>
-                                </div>
-
-                                <span className="align-center text-sm">Roll over image to zoom</span>
-                                <div className="product-img-tmb flex gap-2 justify-center">
-                                    <img src={product.image}alt="" />
-                                    <img src={product.image}alt="" />
-                                    <img src={product.image}alt="" />
-                                    <img src={product.image}alt="" />
-                                    <img src={product.image}alt="" />
-                                    <img src={product.image}alt="" />
-                                    <img src={product.image}alt="" />
-                                </div>
-                            </div>
-
-
-                        </div>
+                        <Gallery product={product}/>
 
                         {/* Product Info */}
                         <div className="product-info">
