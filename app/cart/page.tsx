@@ -20,14 +20,14 @@ import { useEffect } from "react"
 // }
 
 const page = () => {
-    const categorieItems =[]
+    const categorieItems: Array<string> = []
     let total = 0
     //const cartItems = JSON.parse(localStorage.getItem("cartItems")) || []
-    const cartItems = _useAppSelector(state => state.cart.cartItems)
+    const cartItems = _useAppSelector((state: any) => state.cart.cartItems)
     cartItems.length ? total = totalPrice(cartItems) : total = 0
 
 
-    const savedItems = _useAppSelector(state => state.cart.savedItems)
+    const savedItems = _useAppSelector((state: any) => state.cart.savedItems)
     useEffect(() => {
         console.log(savedItems)
     })
@@ -45,7 +45,7 @@ const page = () => {
                                 {cartItems.length ? <div className="a-clr-main text-sm">Deselect all items</div> : false}
                             </div>
                             <div>
-                                {cartItems.map(cartItem =>
+                                {cartItems.map((cartItem:any) =>
                                     <CartPageItem key={cartItem.id} item={cartItem} />
                                 )}
 
@@ -73,8 +73,8 @@ const page = () => {
 
 
                             <div className="flex gap-2 pt-3">
-                                {categorieItems.map(item =>
-                                    <MissionCategory key={item.name}/>
+                                {categorieItems.map((item: any) =>
+                                    <MissionCategory key={item.toString()}/>
                                 )
                                 }
                             </div>
@@ -82,8 +82,8 @@ const page = () => {
 
 
                             <div className="flex flex-wrap flex-row-reverse gap-3 pt-3 justify-end">
-                                {savedItems.map(savedItem =>
-                                    <ProductCard key={savedItem.id} item={savedItem} />
+                                {savedItems.map((savedItem: any) =>
+                                    <ProductCard key={savedItem.toString()} item={savedItem} />
                                 )}
 
                             </div>

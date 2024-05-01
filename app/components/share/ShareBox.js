@@ -32,8 +32,8 @@ const ShareBox = () => {
 
   return (
     <>
-      <div style={{ padding: "8px" }}>
-        <div className="share-box">
+      <div id="shareBox" className="share-box" style={{ padding: "8px", display: "none" }}>
+       
           <div className="arrow">
             <div className="rect"></div>
           </div>
@@ -48,7 +48,7 @@ const ShareBox = () => {
 
           </div>
         </div>
-      </div>
+     
     </>
   )
 };

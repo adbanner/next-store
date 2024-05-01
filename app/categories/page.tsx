@@ -4,6 +4,9 @@ import { useContext } from "react"
 import { _useAppSelector } from "@/lib/hooks";
 import SmartWagon_Carousel from "@/app/components/SmartWagon_Carousel"
 
+
+
+
 export const metadata = {
     title: {
         default: "Categories"
@@ -32,7 +35,7 @@ export default async function Page() {
                 <div className="wrapper flex gap-3 flex-wrap justify-center">
                     {
                         categories && products ?
-                            categories.map(category => {
+                            categories.map((category: string) => {
                                 for (let i in products) {
                                     if (products[i].category == category) return <Link href={`/categories/${category}`} key={products[i].name} ><Category image={products[i].image} title={category} ></Category></Link>
                                 }

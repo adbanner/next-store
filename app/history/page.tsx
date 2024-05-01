@@ -4,11 +4,10 @@ import Link from "next/link"
 import ProductCard from "../components/BrowsedHistory/ProductCard"
 import banner_650x45 from "@/app/assets/images/banner/banner_650x45.jpg"
 import { _useAppSelector } from "@/lib/hooks"
-import Image from 'next/image'
-
+import { IProduct } from "../models/IProduct"
 
 export default function Page() {
-    const products = _useAppSelector(state => state.historyStore.browsedProducts)
+    const products = _useAppSelector((state: any) => state.historyStore.browsedProducts)
 
     return (
         <>
@@ -30,7 +29,7 @@ export default function Page() {
                     <div className="flex flex-wrap">
                         {
                             products ?
-                                products.toReversed().map(product =>
+                                products.toReversed().map((product:IProduct) =>
                                     <ProductCard key={product.id} className="card" product={product}>
                                     </ProductCard>
                                 )

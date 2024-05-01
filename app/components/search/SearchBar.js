@@ -10,8 +10,9 @@ import { useRouter } from 'next/navigation';
 
 
 
+
 const SearchBar = () => {
-    const [searchStr, setSearchStr] = useState("1")
+    const [searchStr, setSearchStr] = useState("")
     const cartList = _useAppSelector((state) => state.cart.cartList);
     //const searchCategory = useAppSelector((state) => state.cart.searchCategory);  
     const searchCategory = _useAppSelector((state) => state.searchStore.searchCategory);

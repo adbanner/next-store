@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation';
 
 import { _useAppDispatch } from "@/lib/hooks";
-import { addToCart } from "@/lib/features/cartSlice";
+import { addToCart } from "@/lib/reducers/cartSlice";
 
 import { Button, Badge } from "react-bootstrap";
 

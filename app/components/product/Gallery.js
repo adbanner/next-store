@@ -2,10 +2,14 @@
 import { GoShare } from "react-icons/go";
 import ShareBox from "../share/ShareBox";
 
-
 const tmbHover = (e) => {
     const mainImage = document.querySelector("#mainImage")
     mainImage.src = "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg"
+}
+
+const onShareClick = (e) => {
+    const shareBox = document.querySelector("#shareBox")
+    shareBox.style.display == "none" ?  shareBox.style.display ="block" : shareBox.style.display = "none"
 }
 
 const Gallery = (props) => {
@@ -16,10 +20,9 @@ const Gallery = (props) => {
                 <div className="product-gallery">
                     <div className="flex">
                         <img src={props.product.image} id='mainImage' />
-                        <div className="product-img-share">
-                            <GoShare size="24px" />
+                        <div className="product-img-share" onClick={onShareClick} >
+                            <GoShare size="24px"/>
                         </div>
-
                         <ShareBox></ShareBox>
                     </div>
 

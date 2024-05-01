@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { _useAppDispatch } from "@/lib/hooks";
-import { addToCart } from "@/lib/features/cartSlice";
-import { removeFromSaved } from "@/lib/features/cartSlice";
+import { addToCart } from "@/lib/reducers/cartSlice";
+import { removeFromSaved } from "@/lib/reducers/cartSlice";
 
 
 const ProductCard = (props) => {
@@ -20,7 +20,7 @@ const ProductCard = (props) => {
         <>
            
                 <div className="banner cursor-pointer" width="250" style={{ maxWidth: "250px", padding: "1rem", border: "1px solid var(--clr-neutral-3)", color: "#333", background: "white" }}>
-                     <Link href={`/product/${props.item.id}`}>
+                     {/* <Link href={`/product/${props.item.id}`}> */}
                     <div className="" style={{}}></div>
                     <div style={{ width: "220px", height: "220px" }}>
                         <img src={props.item.image} className="img" alt="" />
@@ -37,16 +37,23 @@ const ProductCard = (props) => {
                         <span className="font-bold">£{props.item.price}</span><span style={{ textDecorationLine: "line-through" }}>£{fullPrice}</span>
                     </div>
                     <div className="pb-3"></div>
-                    <div className="text-xs flex flex-col gap-2 w-full font-medium">
+                    <div className="text-xs flex flex-col gap-1 w-full font-medium">
                         <span>1K+ bought in past month</span>
                         <span className="a-clr-main">In stock</span>
                         <span>Eligible for FREE Shipping</span>
                         <span><b>Flavour Name:</b> Blazin' Blue Raz</span>
                         <span><b>Size Name:</b> 45 Servings (Pack of 1)</span>
                     </div> 
-                    </Link>
+                    {/* </Link> */}
                     <div className="pb-2"></div>
                     <button  className="btn-outline" onClick={onAddToBasketClick}>Move to basket</button>
+                    
+                    <div className="pb-3"></div>
+                    <div className="text-xs flex flex-col gap-1 w-full font-medium">
+                        <span className="a-clr-main">Delete</span>
+                        <span className="a-clr-main">Add to list</span>
+                        <span className="a-clr-main">See more like this</span>
+                    </div> 
                 </div>
             
         </>

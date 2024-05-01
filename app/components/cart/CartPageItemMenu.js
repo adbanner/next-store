@@ -1,5 +1,5 @@
-import { removeFromCart } from "@/lib/features/cartSlice";
-import { addToSaved } from "@/lib/features/cartSlice";
+import { removeFromCart } from "@/lib/reducers/cartSlice";
+import { addToSaved } from "@/lib/reducers/cartSlice";
 import { _useAppDispatch } from "@/lib/hooks";
 
 const CartPageItemMenu = (props) => {

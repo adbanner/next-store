@@ -20,13 +20,16 @@ import HistoryDispatcher from "../../components/HistoryDispatcher";
 import Gallery from "@/app/components/product/Gallery"
 
 
+type IParams = {
+    params: {id:number},
+}
 
-async function getProducts(productId) {
+async function getProducts(productId:number) {
     const res = await fetch(`https://fakestoreapi.com/products/${productId}`)
     return res.json()
 }
 
-export default async function Category({ params }) {
+export default async function ProductPage({params}:IParams) {
     const product = await getProducts(params.id)
     const productSeller = product.title.split(" ")[0]
 
@@ -143,7 +146,7 @@ export default async function Category({ params }) {
 
             </div>
 
-            <HistoryDispatcher product={product}></HistoryDispatcher>
+            {/* <HistoryDispatcher product:IProduct={product}></HistoryDispatcher> */}
 
         </>
 

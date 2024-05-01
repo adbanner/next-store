@@ -13,7 +13,7 @@ import { _useAppSelector } from "@/lib/hooks";
 import { _useAppDispatch } from "@/lib/hooks";
 
 import { getCartItems, 
-         getSavedItems } from "@/lib/features/cartSlice";
+         getSavedItems } from "@/lib/reducers/cartSlice";
 
 import { useEffect} from "react";
 

@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "lib/StoreProvider.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "lib/StoreProvider.ts", "app/fetchFunctions/fetchData.js", "lib/hooks.ts", "lib/hooks.ts", "lib/store.ts", "lib/reducers/cartSlice.ts", "app/components/search/SearchBar.js"],
   "exclude": ["node_modules"]
 }
