@@ -1,8 +1,13 @@
 import { removeFromCart } from "@/lib/reducers/cartSlice";
 import { addToSaved } from "@/lib/reducers/cartSlice";
 import { _useAppDispatch } from "@/lib/hooks";
+import { IProduct } from '@/app/models/IProduct'
 
-const CartPageItemMenu = (props) => {
+interface IProps {
+    item: IProduct
+}
+
+const CartPageItemMenu = (props:IProps) => {
     const dispatch = _useAppDispatch()
 
     const onSaveClick = () => {

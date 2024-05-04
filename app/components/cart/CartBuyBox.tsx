@@ -1,7 +1,12 @@
 import { GoCheckCircleFill } from "react-icons/go";
 import { Button } from "react-bootstrap";
 
-const CartBuyBox = (props) => {
+interface IProps {
+    total: number,
+    subtotal: number
+}
+
+const CartBuyBox = (props:IProps) => {
     return (
         <>
             <div className="bg-white p-3 w-full">

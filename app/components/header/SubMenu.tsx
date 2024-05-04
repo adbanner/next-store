@@ -20,8 +20,8 @@ const SubMenu = () => {
       <div className="sub-menu ">
         <div className="items">
           {data ?
-            data.map(menu =>
-              <Link key={menu} href={`/categories/${menu}`}>
+            data.map((menu: [] )=>
+              <Link key={menu.toString()} href={`/categories/${menu}`}>
                 <button className="sub-menu-btn"><span>{menu}</span></button>
               </Link>
             )

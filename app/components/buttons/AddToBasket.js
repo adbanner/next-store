@@ -27,4 +27,3 @@ const AddToBasket = (props) => {
 };
 
 export default AddToBasket
-

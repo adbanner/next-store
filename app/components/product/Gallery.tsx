@@ -1,18 +1,23 @@
 "use client"
 import { GoShare } from "react-icons/go";
 import ShareBox from "../share/ShareBox";
+import { IProduct } from "@/app/models/IProduct";
 
-const tmbHover = (e) => {
-    const mainImage = document.querySelector("#mainImage")
-    mainImage.src = "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg"
+type IProps = {
+    product: IProduct
 }
 
-const onShareClick = (e) => {
-    const shareBox = document.querySelector("#shareBox")
+const tmbHover = (e: any) => {
+    const mainImage = document.querySelector("#mainImage") as HTMLImageElement
+    if(mainImage) mainImage.src = "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg"
+}
+
+const onShareClick = (e: any):void => {
+    const shareBox = document.querySelector("#shareBox") as HTMLUListElement
     shareBox.style.display == "none" ?  shareBox.style.display ="block" : shareBox.style.display = "none"
 }
 
-const Gallery = (props) => {
+const Gallery = (props:IProps) => {
     return (
         <>
             {/* Product Image  */}
@@ -40,7 +45,7 @@ const Gallery = (props) => {
 
 export default Gallery
 
-const galleryTmb = (props) => {
+const galleryTmb = (props: IProps) => {
     const obj = []
     for (let i = 0; i < 1 + Math.round(Math.random() * 6); i++) {
         obj.push(<img key={i} src={props.product.image} alt="product" onMouseEnter={tmbHover} />)

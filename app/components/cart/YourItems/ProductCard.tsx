@@ -2,13 +2,14 @@ import Link from "next/link"
 import { _useAppDispatch } from "@/lib/hooks";
 import { addToCart } from "@/lib/reducers/cartSlice";
 import { removeFromSaved } from "@/lib/reducers/cartSlice";
+import { IProduct } from "@/app/models/IProduct";
 
 
-const ProductCard = (props) => {
+const ProductCard = (props:{item:IProduct}) => {
     const dispatch = _useAppDispatch()
     const discount = 5 + Math.round(Math.random() * 50)
     let discountPrice = props.item.price / (100 - discount) * discount
-    let fullPrice = Number(props.item.price) + Number(discountPrice)
+    let fullPrice:number|string = Number(props.item.price) + Number(discountPrice)
     fullPrice = fullPrice.toFixed(2)
 
     const onAddToBasketClick = () => {
@@ -19,7 +20,7 @@ const ProductCard = (props) => {
     return (
         <>
            
-                <div className="banner cursor-pointer" width="250" style={{ maxWidth: "250px", padding: "1rem", border: "1px solid var(--clr-neutral-3)", color: "#333", background: "white" }}>
+                <div className="banner cursor-pointer" style={{width: "250", maxWidth: "250px", padding: "1rem", border: "1px solid var(--clr-neutral-3)", color: "#333", background: "white" }}>
                      {/* <Link href={`/product/${props.item.id}`}> */}
                     <div className="" style={{}}></div>
                     <div style={{ width: "220px", height: "220px" }}>

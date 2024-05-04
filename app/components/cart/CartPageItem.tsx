@@ -2,10 +2,15 @@
 import Image from 'next/image'
 import Link from "next/link"
 import CartPageItemMenu from "./CartPageItemMenu"
+import { IProduct } from '@/app/models/IProduct'
 
-const CartPageItem = (props) => {
-    const checkHandler = (event) => {
-       console.log(event.target.id)
+interface IProps {
+    item: IProduct
+}
+
+const CartPageItem = (props:IProps) => {
+    const checkHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+       console.log((event.target  as Element).id)
       }
     return (
         <>

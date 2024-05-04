@@ -16,17 +16,25 @@ import { getCartItems,
          getSavedItems } from "@/lib/reducers/cartSlice";
 
 import { useEffect} from "react";
+import { IProduct } from "@/app/models/IProduct";
 
+interface ICartReducer {
+    cartItems: string[]
+}
+
+interface ICartState {
+    cart: ICartReducer
+}
 
 const Header = () => {
     const dispatch = _useAppDispatch();
     useEffect(()=>{
-        dispatch(getCartItems([JSON.parse(localStorage.getItem("cartItems"))]))
-        dispatch(getSavedItems([JSON.parse(localStorage.getItem("savedItems"))]))
+        dispatch(getCartItems([JSON.parse(localStorage.getItem("cartItems") ?? '{}')]))
+        dispatch(getSavedItems([JSON.parse(localStorage.getItem("savedItems") ?? '{}')]))
     }, [])
     
    
-    const cartItems = _useAppSelector((state) => state.cart.cartItems);
+    const cartItems = _useAppSelector((state: ICartState) => state.cart.cartItems);
     const itemsAmount = Object.keys(cartItems).reduce((previous, key) => {
         return previous + cartItems[key].amount;
     }, 0) || 0
