@@ -1,5 +1,5 @@
 "use client"
-import {removeBrowsedProduct} from "@/lib/features/historySlice"
+import {removeBrowsedProduct} from "@/lib/reducers/historySlice"
 import { _useAppDispatch } from "@/lib/hooks";
 
 
