@@ -5,12 +5,13 @@ import {addBrowsedItem} from "@/lib/reducers/historySlice"
 import { IProduct } from "../models/IProduct";
 
 
-const HistoryDispatcher = (props:IProduct) => {
+const HistoryDispatcher = (product:IProduct)=> {
     const dispatch = _useAppDispatch()
     const historyDispatch = _useAppDispatch()
-    dispatch(changeSearchCategory(props.category))
-    historyDispatch(addBrowsedItem(props))
-   
+    dispatch(changeSearchCategory(product.category))
+    historyDispatch(addBrowsedItem(product))
+
+    return(<></>)
 };
 
 export default HistoryDispatcher

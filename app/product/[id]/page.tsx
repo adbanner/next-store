@@ -17,6 +17,10 @@ import Banner_Fullx250 from "@/app/components/banners/Banner_Fullx250"
 import Sponsored from "@/app/components/Sponsored"
 import HistoryDispatcher from "../../components/HistoryDispatcher";
 
+import { IProduct } from "@/app/models/IProduct";
+
+
+
 import Gallery from "@/app/components/product/Gallery"
 
 
@@ -25,16 +29,17 @@ type IParams = {
 }
 
 async function getProducts(productId:number) {
+   
     const res = await fetch(`https://fakestoreapi.com/products/${productId}`)
     return res.json()
 }
 
 export default async function ProductPage({params}:IParams) {
-    const product = await getProducts(params.id)
+    const product: IProduct = await getProducts(params.id)
     const productSeller = product.title.split(" ")[0]
-
     return (
         <>
+            <HistoryDispatcher {...product}></HistoryDispatcher>
             <div className="product-page flex flex-col gap-0 px-main">
 
                 <Banner_Fullx45 />
