@@ -42,7 +42,7 @@ const ProductCard = (props:{item:IProduct}) => {
                         <span>1K+ bought in past month</span>
                         <span className="a-clr-main">In stock</span>
                         <span>Eligible for FREE Shipping</span>
-                        <span><b>Flavour Name:</b> Blazin' Blue Raz</span>
+                        <span><b>Flavour Name:</b> Blazin Blue Raz</span>
                         <span><b>Size Name:</b> 45 Servings (Pack of 1)</span>
                     </div> 
                     {/* </Link> */}
