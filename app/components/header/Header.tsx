@@ -34,8 +34,8 @@ const Header = () => {
     }, [])
     
    
-    const cartItems = _useAppSelector((state: ICartState) => state.cart.cartItems);
-    const itemsAmount = Object.keys(cartItems).reduce((previous, key) => {
+    const cartItems:any = _useAppSelector((state: ICartState) => state.cart.cartItems);
+    const itemsAmount = Object.keys(cartItems).reduce((previous, key:any) => {
         return previous + cartItems[key].amount;
     }, 0) || 0
     return (
