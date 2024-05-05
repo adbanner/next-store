@@ -7,9 +7,7 @@ import MissionCategory from "@/app/components/buttons/MissionCategory"
 import Banner_Fullx45 from "../components/banners/Banner_Fullx45"
 import Banner_BasketRelated from "@/app/components/banners/Banner_BasketRelated"
 import { _useAppSelector } from "@/lib/hooks";
-import Link from "next/link"
 import ProductCard from "@/app/components/cart/YourItems/ProductCard"
-import { useEffect } from "react"
 // import { Metadata } from "next"
 
 
@@ -28,9 +26,7 @@ const page = () => {
 
 
     const savedItems = _useAppSelector((state: any) => state.cart.savedItems)
-    useEffect(() => {
-        console.log(savedItems)
-    })
+   
 
     return (
         <>
