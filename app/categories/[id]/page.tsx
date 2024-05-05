@@ -22,7 +22,7 @@ export default async function Category({params}:IParams ) {
                         products ?
                             products.map((product: IProduct) =>
                                 <Link href={`/product/${product.id}`} key={product.id}>
-                                    <ProductCard className="card" product={product}></ProductCard>
+                                    <ProductCard product={product}></ProductCard>
                                 </Link>
                             )
                             :
