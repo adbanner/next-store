@@ -8,6 +8,7 @@ import Banner_Fullx45 from "../components/banners/Banner_Fullx45"
 import Banner_BasketRelated from "@/app/components/banners/Banner_BasketRelated"
 import { _useAppSelector } from "@/lib/hooks";
 import ProductCard from "@/app/components/cart/YourItems/ProductCard"
+import { IProduct } from "../models/IProduct"
 // import { Metadata } from "next"
 
 
@@ -41,7 +42,7 @@ const page = () => {
                                 {cartItems.length ? <div className="a-clr-main text-sm">Deselect all items</div> : false}
                             </div>
                             <div>
-                                {cartItems.map((cartItem:any) =>
+                                {cartItems.map((cartItem:IProduct) =>
                                     <CartPageItem key={cartItem.id} item={cartItem} />
                                 )}
 
@@ -87,8 +88,8 @@ const page = () => {
                         </div>
 
 
-                        <div className="text-xs font-medium">The price and availability of items at Amazon.co.uk are subject to change. The shopping basket is a temporary place to store a list of your items and reflects each item's most recent price.<br></br>
-                            Do you have a gift card or promotional code? We'll ask you to enter your claim code when it's time to pay.</div>
+                        <div className="text-xs font-medium">The price and availability of items at Amazon.co.uk are subject to change. The shopping basket is a temporary place to store a list of your items and reflects each item&aposs most recent price.<br></br>
+                            Do you have a gift card or promotional code? We&aposll ask you to enter your claim code when it&aposs time to pay.</div>
                     </div>
 
                     {/* Right panel */}
