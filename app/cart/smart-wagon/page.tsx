@@ -1,7 +1,6 @@
 import SmartWagon_Main from "@/app/components/SmartWagon_Main"
 import SmartWagon_Carousel from "@/app/components/SmartWagon_Carousel"
 
-
 const page = () => {
     return (
         <>

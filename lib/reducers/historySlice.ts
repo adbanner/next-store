@@ -20,7 +20,13 @@ export const historySlice = createSlice({
   name: "history",
   initialState,
   reducers: {
+    
+    getBrowsedItems: (state: BrowsedItemsState, actions) => {
+      state.browsedItems = actions.payload[0] || []
+    }
+    ,
     addBrowsedItem: (state, actions) => {
+      console.log(actions.payload.id)
       state.browsedItems.findIndex(Item => Item.id === actions.payload.id) == -1
         ?
         state.browsedItems = [...state.browsedItems, actions.payload]
@@ -36,6 +42,7 @@ export const historySlice = createSlice({
   },
 });
 
+export const { getBrowsedItems } = historySlice.actions;
 export const { addBrowsedItem } = historySlice.actions;
 export const { removeBrowsedItem } = historySlice.actions;
 export default historySlice.reducer;

@@ -427,6 +427,13 @@ header {}
   height: 40px;
   display: flex;
 }
+.search-bar select{
+  color: black;
+  padding: 0.3rem 0.5rem;
+}
+.search-bar select option{
+  color: black;
+}
 
 .search-bar input {
   width: 100%;
@@ -562,6 +569,56 @@ nav {
   color: #007185;
   border-bottom: 2px solid;
 }
+
+/* HMenu */
+.hmenu{
+  z-index: 1000;
+  width: 365px;
+  height: 100%;
+  position: fixed;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 0 10px 0 rgba(0,0,0,.4);
+  will-change: transform;
+ 
+}
+.hmenu-customer{
+  height: 50px;
+  background-color: #232f3e;
+}
+
+.hmenu-content{
+  overflow-y: scroll;
+}
+
+.hmenu ul{
+  all:unset;
+}
+
+.hmenu ul li{
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+
+.hmenu-item:hover{
+  background: rgba(0, 0, 0, 0.1);
+
+}
+
+/* fader */
+
+.fader{
+  z-index: 900;
+  position: fixed;
+  will-change: opacity;
+  height: 100%;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  background-color: rgba(0, 0, 0, .8);
+}
+
 
 /*  */
 

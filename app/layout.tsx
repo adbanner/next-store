@@ -6,6 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactClientProvider from "./components/ReactClientProvider";
 import Header from "./components/header/Header";
 import Footer from "./components/Footer"
+import HMenu from "./components/HMenu/HMenu";
+import Fader from "./components/Fader";
 
 import StoreProvider from "../lib/StoreProvider";
 
@@ -33,6 +35,8 @@ export default function RootLayout({
       <StoreProvider>
       <html lang="en">
         <body className={inter.className}>
+          <HMenu></HMenu>
+          <Fader></Fader>
           <Header></Header>
           <main >
             {children}

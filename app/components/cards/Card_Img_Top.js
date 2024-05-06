@@ -1,27 +1,30 @@
 import Link from "next/link"
 import ProductRating from "../ProductRating"
-import { Button} from "react-bootstrap";
+import { Button } from "react-bootstrap";
+import AddToBasket from "@/app/components/SmartWagon/AddToBasket"
 
-const Card_Img_Top = (props) => {
+const Card_Img_Top = ({ product }) => {
     return (
         <>
-            <Link href={`/product/${props.product.id}`}>
-                <div className="banner" width="194" height="384" style={{minWidth: "194px", maxHeight: "384px",padding: "0rem", color: "#333", background:"white" }}>
+
+            <div className="banner" width="194" height="384" style={{ minWidth: "194px", maxHeight: "384px", padding: "0rem", color: "#333", background: "white" }}>
+                <Link href={`/product/${product.id}`}>
                     <div className="" style={{}}></div>
-                    <div style={{width:"194", height: "194px" }}>
-                        <img src={props.product.image} className="img" alt=""/>
+                    <div style={{ width: "194", height: "194px" }}>
+                        <img src={product.image} className="img" alt="" />
                     </div>
                     <span className="text-sm font-bold a-clr-main">
-                        {`${props.product.title.substring(0, 35)}...`}
+                        {`${product.title.substring(0, 35)}...`}
                     </span>
-                    <ProductRating rating={props.product.rating}></ProductRating>
+                    <ProductRating rating={product.rating}></ProductRating>
                     <div className="flex gap-2 items-center">
-                        <span>£{props.product.price}</span>
+                        <span>£{product.price}</span>
                     </div>
                     <br></br>
-                    <Button className="radius-round text-sm" variant="warning" >Add to Basket</Button>
-                </div>
-            </Link>
+                </Link>
+                <AddToBasket product={product} />
+            </div>
+
         </>
     )
 };

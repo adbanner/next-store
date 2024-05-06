@@ -7,7 +7,7 @@ import { _useAppSelector } from "@/lib/hooks"
 import { IProduct } from "../models/IProduct"
 
 export default function Page() {
-    const products = _useAppSelector((state: any) => state.historyStore.browsedProducts)
+    const products = _useAppSelector((state: any) => state.historyStore.browsedItems)
 
     return (
         <>

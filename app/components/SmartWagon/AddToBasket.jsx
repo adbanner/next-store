@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { _useAppDispatch } from "@/lib/hooks";
 import { addToCart } from "@/lib/reducers/cartSlice";
-import { Button, Badge } from "react-bootstrap";
+import { Button} from "react-bootstrap";
 
 
 const AddToBasket = ({product}) => {
@@ -19,7 +19,7 @@ const AddToBasket = ({product}) => {
 
   return (
     <>
-      <Button className="radius-round text-sm" onClick={() => addToBasketClick()} variant="warning" >Add to Basket</Button>
+    <Button className="radius-round text-sm" variant="warning" onClick={() => addToBasketClick()}>Add to Basket</Button>
     </>
   )
 };

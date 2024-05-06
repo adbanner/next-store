@@ -3,31 +3,41 @@ import Link from "next/link"
 import { GoCheckCircleFill } from "react-icons/go";
 import { Button } from "react-bootstrap";
 import totalPrice from "@/app/helpers/totalPrice"
-
 import { _useAppSelector } from "@/lib/hooks";
+import { IParams } from "@/app/models/IParams"
+import { IProduct } from "../models/IProduct";
+import { useEffect, useState } from "react";
+import { useSearchParams } from 'next/navigation'
 
+//interface ICurrent
 
 const SmartWagon_Main = () => {
-    const cartItems = _useAppSelector(state => state.cart.cartItems)
-    const lastItem = cartItems[cartItems.length - 1]
-    let total
-
-    if (cartItems.length) {
+    
+    let currentItem: IProduct
+    let total:number
+    const searchParams = useSearchParams()
+    const itemId = searchParams.get("id") || -1
+    const cartItems:any = [...JSON.parse(localStorage.getItem("cartItems") ?? '{}')]
+    let itemIndex: any = cartItems.findIndex((item: IProduct) => item.id == Number(itemId))
+    // useEffect(()=> {
+    //     console.log(totalPrice(cartItems))
+    // })
+    if(itemIndex!=-1){
+        currentItem = cartItems[itemIndex]
         total = totalPrice(cartItems)
-    } else {
-        total = 0
-        return <div></div>
-    }
-
-
+    }else {
+         return <div></div>
+        }
 
     return (
         <>
-            <div className="grid gap-3 grid-cols-2 w-full  px-main min-h-min">
+           { 
+           currentItem ?
+           <div className="grid gap-3 grid-cols-2 w-full  px-main min-h-min">
                 <div className="flex gap-4 items-center justify-center   bg-white p-6">
-                    <Link href={`/product/${lastItem.id}`}>
+                    <Link href={`/product/${currentItem.id}`}>
                         <div className="img" style={{ width: "100px", height: "100px" }}>
-                            <img src={lastItem.image} className="img" style={{ width: "100px", height: "100px" }} alt="" />
+                            <img src={currentItem.image} className="img" style={{ width: "100px", height: "100px" }} alt="" />
                         </div>
                     </Link>
                     <div>
@@ -44,13 +54,16 @@ const SmartWagon_Main = () => {
                     </div>
                     <div className="" style={{ borderRight: "1px solid var(--clr-neutral-3)" }}></div>
                     <div className="flex flex-col gap-2 px-4 w-full items-center justify-center">
-                        <p className="text-base text-left font-medium pb-1">Basket Subtotal: <b>£100</b></p>
+                        <p className="text-base text-left font-medium pb-1">Basket Subtotal: <b>£{total}</b></p>
                         <Link href={"/cart"} className="w-full"><Button variant="warning" className="w-full text-sm">Proceed to Checkout</Button></Link>
                         <Link href={"/cart"} className="w-full"><Button variant="light" className="w-full text-sm border-1-grey">Go to Basket</Button></Link>
                         <p className="text-xs ">For best experience <span className="a-clr-main">sign in to your account</span></p>
                     </div>
                 </div>
             </div>
+            :
+            <div></div>
+        }
         </>
     )
 };

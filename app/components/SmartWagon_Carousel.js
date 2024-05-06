@@ -5,7 +5,7 @@ import Card_Img_Top from "@/app/components/cards/Card_Img_Top"
 import { GoChevronLeft } from "react-icons/go";
 import { useEffect, useState } from 'react';
 
-const SmartWagon_Carousel = (props) => {
+const SmartWagon_Carousel = ({title}) => {
   const carouselItemWidth = 194
   const [carouselGap, setCarouselGap] = useState("3rem")
   
@@ -28,6 +28,7 @@ const SmartWagon_Carousel = (props) => {
   if (isPending) return <div></div>
   if (isError) return <p>Error</p>
   if (data) {
+    
     data.map(item => item.rnd = Math.random() * 1)
     products = data.sort((a, b) => a.rnd - b.rnd)//.slice(0,4)
   }
@@ -38,7 +39,7 @@ const SmartWagon_Carousel = (props) => {
     <>
       <div className="smart-wagon | w-full bg-white px-main py-4 border-main">
         <div className='flex justify-between w-full'>
-          <p className='text-medium mb-3 font-bold'>{props.title}</p>
+          <p className='text-medium mb-3 font-bold'>{title}</p>
           <span className='text-sm align-right '>Page 1 of 3</span>
         </div>
         
