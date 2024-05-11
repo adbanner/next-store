@@ -571,6 +571,11 @@ nav {
 }
 
 /* HMenu */
+#hmenuFade{
+  transition: 0.3s;
+  opacity: 0;
+  pointer-events: none;
+}
 .hmenu{
   z-index: 1000;
   width: 365px;
@@ -580,12 +585,34 @@ nav {
   display: flex;
   flex-direction: column;
   box-shadow: 4px 0 10px 0 rgba(0,0,0,.4);
-  will-change: transform;
- 
+  transition: 0.3s;
+  transform: translate(-100%);
 }
+
+#hmenuCloseBtn{
+  cursor: pointer;
+  position: fixed;
+  top: 10px;
+  left: 315px;
+  color: white;
+  font-size: 60px;
+  line-height: 0.2;
+  font-weight: 100;
+}
+.rot45{
+  transform: rotate(45deg);
+}
+
 .hmenu-customer{
   height: 50px;
   background-color: #232f3e;
+}
+.hmenu-customer .user-img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: fill;
 }
 
 .hmenu-content{
@@ -606,6 +633,9 @@ nav {
   background: rgba(0, 0, 0, 0.1);
 
 }
+
+
+
 
 /* fader */
 

@@ -5,23 +5,22 @@ import { removeFromSaved } from "@/lib/reducers/cartSlice";
 import { IProduct } from "@/app/models/IProduct";
 
 
-const ProductCard = (props:{item:IProduct}) => {
+const ProductCard = (props: { item: IProduct }) => {
     const dispatch = _useAppDispatch()
     const discount = 5 + Math.round(Math.random() * 50)
     let discountPrice = props.item.price / (100 - discount) * discount
-    let fullPrice:number|string = Number(props.item.price) + Number(discountPrice)
+    let fullPrice: number | string = Number(props.item.price) + Number(discountPrice)
     fullPrice = fullPrice.toFixed(2)
 
     const onAddToBasketClick = () => {
-        //console.log(props.item.id)
         dispatch(addToCart([props.item, props.item.amount]))
         dispatch(removeFromSaved([props.item.id]))
     }
     return (
         <>
-           
-                <div className="banner cursor-pointer" style={{width: "250", maxWidth: "250px", padding: "1rem", border: "1px solid var(--clr-neutral-3)", color: "#333", background: "white" }}>
-                     {/* <Link href={`/product/${props.item.id}`}> */}
+
+            <div className="banner cursor-pointer" style={{ width: "250", maxWidth: "250px", padding: "1rem", border: "1px solid var(--clr-neutral-3)", color: "#333", background: "white" }}>
+                <Link href={`/product/${props.item.id}`}>
                     <div className="" style={{}}></div>
                     <div style={{ width: "220px", height: "220px" }}>
                         <img src={props.item.image} className="img" alt="" />
@@ -44,19 +43,19 @@ const ProductCard = (props:{item:IProduct}) => {
                         <span>Eligible for FREE Shipping</span>
                         <span><b>Flavour Name:</b> Blazin Blue Raz</span>
                         <span><b>Size Name:</b> 45 Servings (Pack of 1)</span>
-                    </div> 
-                    {/* </Link> */}
-                    <div className="pb-2"></div>
-                    <button  className="btn-outline" onClick={onAddToBasketClick}>Move to basket</button>
-                    
-                    <div className="pb-3"></div>
-                    <div className="text-xs flex flex-col gap-1 w-full font-medium">
-                        <span className="a-clr-main">Delete</span>
-                        <span className="a-clr-main">Add to list</span>
-                        <span className="a-clr-main">See more like this</span>
-                    </div> 
+                    </div>
+                </Link>
+                <div className="pb-2"></div>
+                <button className="btn-outline" onClick={onAddToBasketClick}>Move to basket</button>
+
+                <div className="pb-3"></div>
+                <div className="text-xs flex flex-col gap-1 w-full font-medium">
+                    <span className="a-clr-main">Delete</span>
+                    <span className="a-clr-main">Add to list</span>
+                    <span className="a-clr-main">See more like this</span>
                 </div>
-            
+            </div>
+
         </>
     )
 };

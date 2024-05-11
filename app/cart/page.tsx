@@ -71,7 +71,7 @@ const page = () => {
 
                             <div className="flex gap-2 pt-3">
                                 {categorieItems.map((item: any) =>
-                                    <MissionCategory key={item.toString()}/>
+                                    <MissionCategory key={Math.random()}/>
                                 )
                                 }
                             </div>
@@ -80,7 +80,7 @@ const page = () => {
 
                             <div className="flex flex-wrap flex-row-reverse gap-3 pt-3 justify-end">
                                 {savedItems.map((savedItem: any) =>
-                                    <ProductCard key={savedItem.toString()} item={savedItem} />
+                                    <ProductCard key={Math.random()} item={savedItem} />
                                 )}
 
                             </div>
