@@ -31,7 +31,6 @@ export const historySlice = createSlice({
         ?
         state.browsedItems = [...state.browsedItems, actions.payload]
         :
-        false
         localStorage.setItem('browsedItems', JSON.stringify(state.browsedItems));
 
     },
