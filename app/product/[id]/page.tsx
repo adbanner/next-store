@@ -21,7 +21,7 @@ import { IParams } from  "@/app/models/IParams"
 
 import Gallery from "@/app/components/product/Gallery"
 // import AddToBrowsedHistory from "@/app/components/browsedHistory/AddToBrowsedHistory";
-import Header from "@/app/components/browsedHistory/Header";
+import Header from "@/app/components/product/Header";
 
 
 
