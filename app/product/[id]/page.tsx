@@ -34,8 +34,9 @@ export default async function ProductPage({params}:IParams) {
     const product: IProduct = await getProducts(params.id)
     const productSeller = product.title.split(" ")[0]
     return (
-        <>
-            <AddToBrowsedHistory {...product}></AddToBrowsedHistory>
+         <>
+             {/* <AddToBrowsedHistory {...product}></AddToBrowsedHistory> */}
+             <AddToBrowsedHistory></AddToBrowsedHistory>
             <div className="product-page flex flex-col gap-0 px-main">
 
                 <Banner_Fullx45 />
