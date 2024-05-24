@@ -21,7 +21,7 @@ import { IProduct } from "@/app/models/IProduct";
 import { IParams } from  "@/app/models/IParams"
 
 import Gallery from "@/app/components/product/Gallery"
-// import AddToBrowsedHistory from "@/app/components/browsedHistory/AddToBrowsedHistory";
+ import AddToBrowsedHistory from "@/app/components/browsedHistory/AddToBrowsedHistory";
 
 
 
@@ -36,7 +36,7 @@ export default async function ProductPage({params}:IParams) {
     const productSeller = product.title.split(" ")[0]
     return (
         <>
-            {/* <AddToBrowsedHistory {...product}></AddToBrowsedHistory> */}
+            <AddToBrowsedHistory {...product}></AddToBrowsedHistory>
             <div className="product-page flex flex-col gap-0 px-main">
 
                 <Banner_Fullx45 />
