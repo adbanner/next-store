@@ -8,7 +8,7 @@ export default async function Home() {
   //if (!session.user) return null
   return (
     <>
-    <SignIn/>
+    {/* <SignIn/> */}
      <ProductList></ProductList>
     </>
   );

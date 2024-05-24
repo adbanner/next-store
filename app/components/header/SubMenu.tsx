@@ -3,7 +3,7 @@ import Link from "next/link"
 import { usePathname } from 'next/navigation';
 
 import { useQuery} from '@tanstack/react-query'
-import fetchApi from "../../fetchFunctions/fetchApi"
+import fetchData from "../../fetchFunctions/fetchData"
 
 
 
@@ -18,9 +18,9 @@ interface ICategorie {
 const SubMenu = () => {
 
   const pathname = usePathname();
-  const {data, isPending, isError, error} = useQuery({queryKey: ['categoriesListApi'], queryFn: ()=>fetchApi("categories")})
+  const { data, isPending, isError, error } = useQuery({ queryKey: ['categoriesList'], queryFn: () => fetchData("categories") })
 
-   if (isPending) return <span>Loading...</span>
+   if (isPending) return <></>//<span>Loading...</span>
    if (isError) return <span>Error: {error.message}</span>
 
   return (
@@ -28,9 +28,9 @@ const SubMenu = () => {
       <div className="sub-menu ">
         <div className="items">
           {data ?
-            data.map((menu: ICategorie )=>
-              <Link key={menu.slug.toString()} href={`/categories/${menu.name}`}>
-                <button className="sub-menu-btn"><span>{menu.name}</span></button>
+            data.map((menu: string )=>
+              <Link key={menu.toString()} href={`/categories/${menu}`}>
+                <button className="sub-menu-btn"><span>{menu}</span></button>
               </Link>
             )
             :
