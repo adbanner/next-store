@@ -1,6 +1,6 @@
 import { Suspense } from 'react'
-import SmartWagon_Main from "@/app/components/SmartWagon_Main"
-import SmartWagon_Carousel from "@/app/components/SmartWagon_Carousel"
+import SmartWagon_Main from "@/components/SmartWagon_Main"
+import SmartWagon_Carousel from "@/components/SmartWagon_Carousel"
 
 const page = () => {
     return (

@@ -1,14 +1,14 @@
 "use client"
-import CartPageItem from "../components/cart/CartPageItem"
-import CartBuyBox from "@/app/components/cart/CartBuyBox"
-import totalPrice from "../helpers/totalPrice"
+import CartPageItem from "@/components/cart/CartPageItem"
+import CartBuyBox from "@/components/cart/CartBuyBox"
+import totalPrice from "@/lib/totalPrice"
 
-import MissionCategory from "@/app/components/buttons/MissionCategory"
-import Banner_Fullx45 from "../components/banners/Banner_Fullx45"
-import Banner_BasketRelated from "@/app/components/banners/Banner_BasketRelated"
+import MissionCategory from "@/components/buttons/MissionCategory"
+import Banner_Fullx45 from "@/components/banners/Banner_Fullx45"
+import Banner_BasketRelated from "@/components/banners/Banner_BasketRelated"
 import { _useAppSelector } from "@/lib/hooks";
-import ProductCard from "@/app/components/cart/YourItems/ProductCard"
-import { IProduct } from "../models/IProduct"
+import ProductCard from "@/components/cart/YourItems/ProductCard"
+import { IProduct } from "@/models/IProduct"
 // import { Metadata } from "next"
 
 

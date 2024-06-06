@@ -1,26 +1,26 @@
 
 import Link from "next/link"
-import ProductsList from "../../components/ProductsList"
-import ProductRating from "../../components/ProductRating"
-import QuantitySelector from "../../components/QuantitySelector"
+import ProductsList from "@/components/ProductsList"
+import ProductRating from "@/components/ProductRating"
+import QuantitySelector from "@/components/QuantitySelector"
 
 import { GoLocation } from "react-icons/go";
 import { GoOrganization } from "react-icons/go";
 import { GoReport } from "react-icons/go";
 
 import { Button, Badge } from "react-bootstrap";
-import AddToBasket from "../../components/buttons/AddToBasket"
+import AddToBasket from "@/components/buttons/AddToBasket"
 
-import Banner_Fullx45 from "@/app/components/banners/Banner_Fullx45"
-import Banner_Fullx250 from "@/app/components/banners/Banner_Fullx250"
+import Banner_Fullx45 from "@/components/banners/Banner_Fullx45"
+import Banner_Fullx250 from "@/components/banners/Banner_Fullx250"
 
-import Sponsored from "@/app/components/Sponsored"
+import Sponsored from "@/components/Sponsored"
 
-import { IProduct } from "@/app/models/IProduct";
-import { IParams } from  "@/app/models/IParams"
+import { IProduct } from "@/models/IProduct";
+import { IParams } from  "@/models/IParams"
 
-import Gallery from "@/app/components/product/Gallery"
-import AddToBrowsedHistory from "@/app/components/browsed-history/AddToBrowsedHistory";
+import Gallery from "@/components/product/Gallery"
+import AddToBrowsedHistory from "@/components/browsed-history/AddToBrowsedHistory";
 
 
 

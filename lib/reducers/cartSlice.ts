@@ -1,6 +1,6 @@
 'use client'
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { IProduct } from "@/app/models/IProduct";
+import { IProduct } from "@/models/IProduct";
 
 
 interface CartState{

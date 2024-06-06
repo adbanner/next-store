@@ -1,7 +1,7 @@
-import ProductCard from "../../components/ProductCard"
+import ProductCard from "@/components/ProductCard"
 import Link from "next/link"
-import SmartWagon_Carousel from "@/app/components/SmartWagon_Carousel"
-import { IProduct } from "@/app/models/IProduct"
+import SmartWagon_Carousel from "@/components/SmartWagon_Carousel"
+import { IProduct } from "@/models/IProduct"
 
 type IParams = {
     params: {id:number},

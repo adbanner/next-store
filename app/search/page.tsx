@@ -1,5 +1,5 @@
-import SearchList from "../components/search/SearchList"
-import SmartWagon_Carousel from "@/app/components/SmartWagon_Carousel"
+import SearchList from "@/components/search/SearchList"
+import SmartWagon_Carousel from "@/components/SmartWagon_Carousel"
 
 const Page = () => {
     return (

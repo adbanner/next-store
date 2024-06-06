@@ -1,10 +1,10 @@
 
 "use client"
 import Link from "next/link"
-import ProductCard from "../components/browsed-history/ProductCard"
-import banner_650x45 from "@/app/assets/images/banner/banner_650x45.jpg"
+import ProductCard from "@/components/browsed-history/ProductCard"
+import banner_650x45 from "@/assets/images/banner/banner_650x45.jpg"
 import { _useAppSelector } from "@/lib/hooks"
-import { IProduct } from "../models/IProduct"
+import { IProduct } from "@/models/IProduct"
 
 export default function Page() {
     const products = _useAppSelector((state: any) => state.historyStore.browsedItems)

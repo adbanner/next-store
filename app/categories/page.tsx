@@ -1,8 +1,7 @@
 import Link from "next/link"
-import Category from "../components/Category"
-import { useContext } from "react"
+import Category from "@/components/Category"
 import { _useAppSelector } from "@/lib/hooks";
-import SmartWagon_Carousel from "@/app/components/SmartWagon_Carousel"
+import SmartWagon_Carousel from "@/components/SmartWagon_Carousel"
 
 
 
