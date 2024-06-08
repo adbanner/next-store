@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "lib/StoreProvider.ts", "lib/fetchFunctions/fetchData.js", "lib/hooks.ts", "lib/hooks.ts", "lib/store.ts", "lib/reducers/cartSlice.ts", "app/components/search/SearchBar.tsx", "components/HMenu/HMenu.js", "app/page.js", "components/SIgnIn_Google.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "lib/StoreProvider.ts", "lib/fetchFunctions/fetchData.js", "lib/hooks.ts", "lib/hooks.ts", "lib/store.ts", "lib/reducers/cartSlice.ts", "app/components/search/SearchBar.tsx", "components/HMenu/HMenu.js", "app/page.js", "components/SIgnIn_Google.js", "components/home/cards/CardItem.js", "components/home/cards/Card.js", "components/home/slider/Slider.js"],
   "exclude": ["node_modules"]
 }
