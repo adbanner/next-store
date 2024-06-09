@@ -22,9 +22,9 @@ const Card = async ({ header }:Props) => {
 
   return (
     <>
-      <div className="home-card | p-4  bg-white w-full">
+      <div className="home-card | p-4  bg-white w-full h-full">
         <div className="card-header font-bold text-xl pb-3">
-          <p>{header || `Pick up where you left off`}</p>
+          <p>{header || ``}</p>
         </div>
 
         {/* Row 1 */}

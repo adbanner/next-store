@@ -24,7 +24,7 @@ const Slider = () => {
         allSlides = slider.querySelectorAll<HTMLElement>('img')
         slideId = allSlides.length - 1
         allSlides[slideId].style.zIndex = 1
-        
+        if(sliderInterval) clearInterval(sliderInterval)
         if(!sliderInterval)sliderInterval = setInterval(()=>changeSlide("nextSlide"), 5000)
         //console.log('allSlides')
     })
