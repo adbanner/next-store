@@ -7,6 +7,7 @@ const Slider = () => {
     let slideId: number = 0
     let slider: HTMLElement
     let allSlides: any
+    let sliderInterval: ReturnType<typeof setTimeout>
 
     const sliderData: { img: string, link: string }[] = [{
         img: "https://m.media-amazon.com/images/I/71CTkwWUOHL._SX3000_.jpg",
@@ -23,11 +24,16 @@ const Slider = () => {
         allSlides = slider.querySelectorAll<HTMLElement>('img')
         slideId = allSlides.length - 1
         allSlides[slideId].style.zIndex = 1
-        console.log(allSlides)
+        
+        if(!sliderInterval)sliderInterval = setInterval(()=>changeSlide("nextSlide"), 5000)
+        //console.log('allSlides')
     })
 
+    const arrowBtnPres = () => {
+
+    }
+
     const changeSlide = (action: string) => {
-        console.log("slideId", slideId)
         allSlides[slideId].style.zIndex = 0
         switch (action) {
             case "nextSlide":
@@ -48,10 +54,10 @@ const Slider = () => {
         <>
             <div className='arrows flex justify-between'>
                 <div className='arrow-left'>
-                    <button className='arrow-btn' onClick={() => changeSlide("prevSlide")}><GoChevronLeft size="60" color='white' /></button>
+                    <button className='arrow-btn' onClick={() => {changeSlide("prevSlide"); clearInterval(sliderInterval)}}><GoChevronLeft size="60" color='white' /></button>
                 </div>
                 <div className='arrow-right'>
-                    <button className='arrow-btn' onClick={() => changeSlide("nextSlide")}><GoChevronLeft size="60" color='white' /></button>
+                    <button className='arrow-btn' onClick={() => {changeSlide("nextSlide"); clearInterval(sliderInterval)}}><GoChevronLeft size="60" color='white' /></button>
                 </div>
             </div>
             <div className="slider">

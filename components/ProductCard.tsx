@@ -1,10 +1,15 @@
 "use client"
 import Card from 'react-bootstrap/Card';
 import ProductRating from "@/components/ProductRating"
+import { IProduct } from "@/models/IProduct";
+
+type Props = {
+  product: IProduct
+}
 
 
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product }:Props) => {
     //const [rating, setRating] = useState([1,2,3,4,5])
    
     return (

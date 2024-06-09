@@ -4,14 +4,19 @@ import fetchData from "@/lib/fetchFunctions/fetchData"
 import Card_Img_Top from "@/components/cards/Card_Img_Top"
 import { GoChevronLeft } from "react-icons/go";
 import { useEffect, useState } from 'react';
+import { IProduct } from '@/models/IProduct';
 
-const SmartWagon_Carousel = ({title}) => {
+type Props = {
+  title: string
+}
+
+const SmartWagon_Carousel = ({title}:Props) => {
   const carouselItemWidth = 194
   const [carouselGap, setCarouselGap] = useState("3rem")
   
   const resizeCarousel = () => {
 
-    const smartWagonCarousel = document.querySelector("#smartWagonCarousel")
+    const smartWagonCarousel = document.querySelector<HTMLElement>("#smartWagonCarousel")!
     let itemsAmount = Math.floor(smartWagonCarousel.clientWidth / carouselItemWidth)
     smartWagonCarousel.style.gap = (smartWagonCarousel.clientWidth - carouselItemWidth * itemsAmount) / itemsAmount + "px"
   }
@@ -29,8 +34,8 @@ const SmartWagon_Carousel = ({title}) => {
   if (isError) return <p>Error</p>
   if (data) {
     
-    data.map(item => item.rnd = Math.random() * 1)
-    products = data.sort((a, b) => a.rnd - b.rnd)//.slice(0,4)
+    data.map((item:IProduct) => item.rnd = Math.random() * 1)
+    products = data.sort((a:IProduct, b:IProduct) => a.rnd! - b.rnd!)//.slice(0,4)
   }
 
 
@@ -47,7 +52,7 @@ const SmartWagon_Carousel = ({title}) => {
           <button className='arrow-btn'><GoChevronLeft size="25" /></button>
           <div id="smartWagonCarousel" className="carousel items flex">
             {products ?
-              products.map(product =>
+              products.map((product:IProduct) =>
                 <Card_Img_Top key={product.id} product={product} />
               )
               :

@@ -26,7 +26,7 @@ export const historySlice = createSlice({
     }
     ,
     addBrowsedItem: (state, actions) => {
-      console.log(actions.payload.id)
+      //console.log(actions.payload.id)
       state.browsedItems.findIndex(Item => Item.id === actions.payload.id) == -1
         ?
         state.browsedItems = [...state.browsedItems, actions.payload]

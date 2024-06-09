@@ -11,7 +11,7 @@ const Page = () => {
                    <Slider/>
                     <div className='home-cards flex flex-col w-full gap-4'>
                         <div className='flex gap-4 px-4 relative'>
-                            <Card />
+                            <Card header={""} />
                             <Card header={"Keep shopping for"} />
                             <Card header={"Top offers"} />
                             <Card header={"Popular categories"} />

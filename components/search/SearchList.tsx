@@ -1,5 +1,6 @@
 "use client"
 import Link from "next/link"
+import { IProduct } from "@/models/IProduct"
 //import { useSearchParams } from 'next/navigation'
 
 import { Suspense } from 'react'
@@ -13,7 +14,7 @@ export default function ProductsList() {
     let { data, isPending, isError, error } = useQuery({ queryKey: ['searchList'], queryFn: () => fetchData("") })
     if (data) {
         //data = data.filter((obj) => Object.values(obj).toString().toLowerCase().includes(searchParams.get("str") || ""))
-        data = data.filter((obj) => Object.values(obj).toString().toLowerCase().includes("men" || ""))
+        //data = data.filter(((obj)) => Object.values(obj).toString().toLowerCase().includes("men" || ""))
     }
 
     return (
@@ -23,8 +24,8 @@ export default function ProductsList() {
                     {/* <h1>{...params}</h1> */}
                     {
                         data ?
-                            data.map(product =>
-                                <Link key={product.id} href={`/product/${product.id}`}><ProductCard className="card" key={product.id} product={product}></ProductCard></Link>
+                            data.map((product:IProduct) =>
+                                <Link key={product.id} href={`/product/${product.id}`}><ProductCard key={product.id} product={product}></ProductCard></Link>
                             )
                             :
                             <div>No products</div>

@@ -3,8 +3,12 @@
 import Dropdown from 'react-bootstrap/Dropdown';
 import { Button } from "react-bootstrap";
 
-const QuantitySelector = (props) => {
-    const quantity = props.quantity || 5
+type Props = {
+    quantity: number
+}
+
+const QuantitySelector = ({quantity}:Props) => {
+    quantity = quantity || 5
     return (
         <>
             <div  className="quantity-selector flex" style={{ width: "100%" }}>

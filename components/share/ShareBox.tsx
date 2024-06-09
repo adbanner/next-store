@@ -25,7 +25,7 @@ const ShareBox = () => {
 
   useEffect(() => {
     document.addEventListener("mouseover", (e) => {
-      e.target.id != "copyLink" ? setCopyLinkText("Copy Link") : false
+      (e.target as HTMLElement).id  != "copyLink" ? setCopyLinkText("Copy Link") : false
 
     })
   })

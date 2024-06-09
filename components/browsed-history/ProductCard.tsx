@@ -4,8 +4,13 @@ import Image from 'next/image'
 import ProductRating from "@/components/ProductRating"
 import RemoveFromViewBtn from "@/components/buttons/RemoveFromViewBtn"
 
+import { IProduct } from "@/models/IProduct"
 
-const ProductCard = (props) => {
+type Props = {
+    product: IProduct
+}
+
+const ProductCard = ({product}:Props) => {
 
     return (
         <>
@@ -19,25 +24,25 @@ const ProductCard = (props) => {
                 marginBottom: "-1px", 
                 color: "#333"
             }}>
-                <Link href={`/product/${props.product.id}`}>
+                <Link href={`/product/${product.id}`}>
                     <div className="" style={{}}></div>
                     <div style={{ padding: "1rem 1rem 0", height: "180px" }}>
-                        <img src={props.product.image} className="img" />
+                        <img src={product.image} className="img" />
                     </div>
                     <div className="py-1"></div>
                     <div className="flex flex-col items-center">
                         <span className="text-sm a-link-main text-center">
-                            {`${props.product.title.substring(0, 25)}...`}
+                            {`${product.title.substring(0, 25)}...`}
                         </span>
-                        <ProductRating rating={props.product.rating}></ProductRating>
+                        <ProductRating rating={product.rating}></ProductRating>
                         <div className="text-center">
-                            <div className="text-sm a-clr-price">£{props.product.price}</div>
+                            <div className="text-sm a-clr-price">£{product.price}</div>
                             <span className="text-xs text-black">Get it <b>20 - 23 Apr</b></span>
                         </div>
                     </div>
                 </Link>
                 <div className="w-full flex justify-center">
-                    <RemoveFromViewBtn productId={props.product.id} />
+                    <RemoveFromViewBtn productId={product.id} />
                 </div>
             </div>
 

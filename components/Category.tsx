@@ -2,7 +2,12 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-const Category = ({ title, image }) => {
+type Props = {
+    title: string,
+    image: string
+}
+
+const Category = ({ title, image }: Props) => {
     return (
         <>
             <Card className="product-card" style={{ width: '220px', border: "none" }}>

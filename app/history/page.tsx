@@ -30,7 +30,7 @@ export default function Page() {
                         {
                             products ?
                                 products.toReversed().map((product:IProduct) =>
-                                    <ProductCard key={product.id} className="card" product={product}>
+                                    <ProductCard key={product.id} product={product}>
                                     </ProductCard>
                                 )
                                 :

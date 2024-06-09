@@ -7,15 +7,15 @@ import Link from "next/link";
 import { _useAppSelector } from "@/lib/hooks";
 import { useState, useEffect } from "react";
 import { useRouter } from 'next/navigation';
-
+import type { RootState } from '@/lib/store'
 
 
 
 const SearchBar = () => {
     const [searchStr, setSearchStr] = useState("")
-    const cartList = _useAppSelector((state) => state.cart.cartList);
+    //const cartList = _useAppSelector((state: RootState) => state.cart.cartList);
     //const searchCategory = useAppSelector((state) => state.cart.searchCategory);  
-    const searchCategory = _useAppSelector((state) => state.searchStore.searchCategory);
+    const searchCategory = _useAppSelector((state: RootState) => state.searchStore.searchCategory);
 
     const {push} = useRouter()
 
@@ -27,7 +27,7 @@ const SearchBar = () => {
 
     useEffect(() => {
      window.addEventListener("keypress", (e)=>{
-        if(e.key === "Enter" && document.activeElement.id=="search_input"){
+        if(e.key === "Enter" && (document.activeElement as HTMLElement).id=="search_input"){
             
             push(`/search?str=${searchStr}`)
         }

@@ -109,7 +109,7 @@ export default async function ProductPage({params}:IParams) {
 
                                     {/* Counter */}
 
-                                    <QuantitySelector></QuantitySelector>
+                                    <QuantitySelector quantity={5}></QuantitySelector>
 
                                     <AddToBasket product={product}></AddToBasket>
                                     {/* <Button  variant="warning" className="cart-btn">Add to Basket</Button> */}

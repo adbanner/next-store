@@ -5,8 +5,13 @@ import { _useAppDispatch } from "@/lib/hooks";
 import { addToCart } from "@/lib/reducers/cartSlice";
 import { Button, Badge } from "react-bootstrap";
 
+import { IProduct } from "@/models/IProduct"
 
-const AddToBasket = ({product}) => {
+type Props = {
+    product: IProduct
+}
+
+const AddToBasket = ({product}:Props) => {
   const {push} = useRouter()
   const dispatch = _useAppDispatch();
 

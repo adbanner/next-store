@@ -2,6 +2,11 @@ import { useQuery } from '@tanstack/react-query'
 import fetchData from "@/lib/fetchFunctions/fetchData"
 import Link from "next/link"
 import CardItem from '@/components/home/cards/CardItem'
+import { IProduct } from '@/models/IProduct'
+
+type Props = {
+  header: string;
+};
 
 async function getProducts() {
   const res = await fetch('https://fakestoreapi.com/products?limit=20')
@@ -9,10 +14,11 @@ async function getProducts() {
 }
 
 
-const Card = async ({ header }) => {
+
+const Card = async ({ header }:Props) => {
   let products = await getProducts()
-  products.map((item) => item.rnd = Math.random() * 1)
-  products = products.sort((a, b) => a.rnd - b.rnd)
+  products.map((item:IProduct) => item.rnd = Math.random() * 1)
+  products = products.sort((a:IProduct, b:IProduct) => a.rnd! - b.rnd!)
 
   return (
     <>
