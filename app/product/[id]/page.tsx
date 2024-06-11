@@ -113,7 +113,7 @@ export default async function ProductPage({params}:IParams) {
 
                                     <AddToBasket product={product}></AddToBasket>
                                     {/* <Button  variant="warning" className="cart-btn">Add to Basket</Button> */}
-                                    <Link href={"/cart/smart-wagon"} ><Button variant="warning" className="buy-now-btn | radius-round | text-sm w-full">Buy now</Button></Link>
+                                    <Button variant="warning" className="buy-now-btn | radius-round | text-sm w-full">Buy now</Button>
                                 </div>
                                 <div className="grid gap-1 text-xs">
                                     <div className="grid grid-cols-2 gap-1 ">

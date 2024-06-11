@@ -1,5 +1,6 @@
 import Card from "@/components/home/cards/Card"
 import VideoCard from "@/components/home/cards/VideoCard"
+import SmartWagon_Carousel from "@/components/home/smart-wagon/SmartWagon_Carousel";
 
 import { GoChevronLeft } from "react-icons/go";
 import Slider from "@/components/home/slider/Slider"
@@ -37,6 +38,10 @@ const Page = () => {
                             <Card header={"Beauty & Wellness"} />
                         </div>
                     </div>
+                    {/* <div className="p-4">
+                        <SmartWagon_Carousel title={"You might also like"} />
+                    </div> */}
+
                 </div>
                 <div>
 

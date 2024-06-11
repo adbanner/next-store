@@ -16,7 +16,7 @@ const Card_Img_Top = ({ product }: Props) => {
                 <Link href={`/product/${product.id}`}>
                     <div className="" ></div>
                     <div >
-                        <img src={product.image} className="img" alt="" />
+                        <img src={product.image} className="img" alt="" style={{height:"200px"}} />
                     </div>
                     <span className="text-sm font-bold a-clr-main">
                         {`${product.title.substring(0, 35)}...`}
