@@ -625,7 +625,7 @@ nav {
 }
 
 .hmenu-content {
-  overflow-y: scroll;
+  overflow-y:auto;
 }
 
 .hmenu ul {
